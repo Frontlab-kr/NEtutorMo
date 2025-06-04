@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <script src="/inc/js/include.js"></script>
+
+    <script>
+      fetch('/inc/domain/domainheader.html')
+        .then((res) => res.text())
+        .then((html) => {
+          const temp = document.createElement('div');
+          temp.innerHTML = html;
+          [...temp.children].forEach((el) => document.head.appendChild(el));
+        });
+    </script>
+  </head>
+  <body>
+    <div class="ne ne-english">
+      <!-- header -->
+      <div include-html="/inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main>
+        <div class="ne-contents">
+          <div class="ne-guide">
+            <div class="ne-guide-item">
+              <div class="ne-guide-item-title">
+                Square<br />
+                Primary <br />
+                Text Button
+              </div>
+              <div class="ne-guide-item-contents">
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-sm"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button type="button" class="ne-btn ne-btn-primary">
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-lg"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-sm hover"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button type="button" class="ne-btn ne-btn-primary hover">
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-lg hover"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-sm"
+                      disabled
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary"
+                      disabled
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-lg"
+                      disabled
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ne-guide-item">
+              <div class="ne-guide-item-title">
+                Secondary - EN<br />
+                Text Button
+              </div>
+              <div class="ne-guide-item-contents">
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-secondary ne-btn-sm"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button type="button" class="ne-btn ne-btn-secondary">
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-secondary ne-btn-lg"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-secondary ne-btn-sm hover"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button type="button" class="ne-btn ne-btn-secondary hover">
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-secondary ne-btn-lg hover"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-secondary ne-btn-sm"
+                      disabled
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-secondary"
+                      disabled
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-secondary ne-btn-lg"
+                      disabled
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ne-guide-item">
+              <div class="ne-guide-item-title">
+                Secondary - math<br />
+                Text Button
+              </div>
+              <div class="ne-guide-item-contents">
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-secondary ne-btn-sm"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button type="button" class="ne-btn ne-btn-secondary">
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-secondary ne-btn-lg"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-secondary ne-btn-sm hover"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button type="button" class="ne-btn ne-btn-secondary hover">
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-secondary ne-btn-lg hover"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-secondary ne-btn-sm"
+                      disabled
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-secondary"
+                      disabled
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-secondary ne-btn-lg"
+                      disabled
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ne-guide-item">
+              <div class="ne-guide-item-title">
+                Tertiary<br />
+                Text Button
+              </div>
+              <div class="ne-guide-item-contents">
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-tertiary ne-btn-sm"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button type="button" class="ne-btn ne-btn-tertiary">
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-tertiary ne-btn-lg"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-tertiary ne-btn-sm hover"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button type="button" class="ne-btn ne-btn-tertiary hover">
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-tertiary ne-btn-lg hover"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-tertiary ne-btn-sm"
+                      disabled
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-tertiary"
+                      disabled
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-tertiary ne-btn-lg"
+                      disabled
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ne-guide-item">
+              <div class="ne-guide-item-title">
+                Black<br />
+                Text Button
+              </div>
+              <div class="ne-guide-item-contents">
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button type="button" class="ne-btn ne-btn-black ne-btn-sm">
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button type="button" class="ne-btn ne-btn-black">
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button type="button" class="ne-btn ne-btn-black ne-btn-lg">
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-sm hover"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button type="button" class="ne-btn ne-btn-black hover">
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-lg hover"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-sm"
+                      disabled
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button type="button" class="ne-btn ne-btn-black" disabled>
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-lg"
+                      disabled
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ne-guide-item">
+              <div class="ne-guide-item-title">
+                Outline<br />
+                Text Button
+              </div>
+              <div class="ne-guide-item-contents">
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outline ne-btn-sm"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outline"
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outline ne-btn-lg"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outline ne-btn-sm hover"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outline hover"
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outline ne-btn-lg hover"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outline ne-btn-sm"
+                      disabled
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outline"
+                      disabled
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outline ne-btn-lg"
+                      disabled
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ne-guide-item">
+              <div class="ne-guide-item-title">
+                Square<br />
+                Primary <br />
+                Text Button
+              </div>
+              <div class="ne-guide-item-contents">
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-primary ne-btn-sm"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-primary"
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-primary ne-btn-lg"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-primary ne-btn-sm hover"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-primary hover"
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-primary ne-btn-lg hover"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-primary ne-btn-sm"
+                      disabled
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-primary"
+                      disabled
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-primary ne-btn-lg"
+                      disabled
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ne-guide-item">
+              <div class="ne-guide-item-title">
+                Secondary - EN<br />
+                Text Button
+              </div>
+              <div class="ne-guide-item-contents">
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-secondary ne-btn-sm"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-secondary"
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-secondary ne-btn-lg"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-secondary ne-btn-sm hover"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-secondary hover"
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-secondary ne-btn-lg hover"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-secondary ne-btn-sm"
+                      disabled
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-secondary"
+                      disabled
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-secondary ne-btn-lg"
+                      disabled
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ne-guide-item">
+              <div class="ne-guide-item-title">
+                Secondary - math<br />
+                Text Button
+              </div>
+              <div class="ne-guide-item-contents">
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-secondary ne-btn-sm"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-secondary"
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-secondary ne-btn-lg"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-secondary ne-btn-sm hover"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-secondary hover"
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-secondary ne-btn-lg hover"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-secondary ne-btn-sm"
+                      disabled
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-secondary"
+                      disabled
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-secondary ne-btn-lg"
+                      disabled
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ne-guide-item">
+              <div class="ne-guide-item-title">
+                Tertiary<br />
+                Text Button
+              </div>
+              <div class="ne-guide-item-contents">
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-tertiary ne-btn-sm"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-tertiary"
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-tertiary ne-btn-lg"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-tertiary ne-btn-sm hover"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-tertiary hover"
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-tertiary ne-btn-lg hover"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-tertiary ne-btn-sm"
+                      disabled
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-tertiary"
+                      disabled
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-tertiary ne-btn-lg"
+                      disabled
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ne-guide-item">
+              <div class="ne-guide-item-title">
+                Black<br />
+                Text Button
+              </div>
+              <div class="ne-guide-item-contents">
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-black ne-btn-sm"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-black"
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-black ne-btn-lg"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-black ne-btn-sm hover"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-black hover"
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-black ne-btn-lg hover"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-black ne-btn-sm"
+                      disabled
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-black"
+                      disabled
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-black ne-btn-lg"
+                      disabled
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ne-guide-item">
+              <div class="ne-guide-item-title">
+                Text<br />
+                Button
+              </div>
+              <div class="ne-guide-item-contents">
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-black ne-btn-sm"
+                    >
+                      텍스트
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-black"
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-black ne-btn-lg"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-black ne-btn-sm hover"
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-black hover"
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-black ne-btn-lg hover"
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-black ne-btn-sm"
+                      disabled
+                    >
+                      Button text small
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-black"
+                      disabled
+                    >
+                      Button text middle
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-rounded ne-btn-black ne-btn-lg"
+                      disabled
+                    >
+                      Button text large
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="/inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

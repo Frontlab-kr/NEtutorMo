@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <script src="/inc/js/include.js"></script>
+
+    <script>
+      fetch('/inc/domain/domainheader.html')
+        .then((res) => res.text())
+        .then((html) => {
+          const temp = document.createElement('div');
+          temp.innerHTML = html;
+          [...temp.children].forEach((el) => document.head.appendChild(el));
+        });
+    </script>
+  </head>
+  <body>
+    <div class="ne ne-english">
+      <!-- header -->
+      <div include-html="/inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main>
+        <div class="ne-contents">
+          <div class="ne-guide">
+            <div class="ne-guide-item">
+              <div class="ne-guide-item-title">Label</div>
+              <div class="ne-guide-item-contents">
+                <div class="ne-guide-item-contents-state">
+                  <div style="display: flex; gap: 16px">
+                    <span class="ne-badge ne-badge-primary ne-badge-outline"
+                      >Label</span
+                    >
+                    <div class="ne-math">
+                      <span class="ne-badge ne-badge-secondary ne-badge-outline"
+                        >Label</span
+                      >
+                    </div>
+                    <span class="ne-badge ne-badge-secondary ne-badge-outline"
+                      >Label</span
+                    >
+                    <span class="ne-badge ne-badge-black ne-badge-outline"
+                      >Label</span
+                    >
+                  </div>
+                  <div style="display: flex; gap: 16px">
+                    <span class="ne-badge ne-badge-primary">Label</span>
+                    <div class="ne-math">
+                      <span class="ne-badge ne-badge-secondary">Label</span>
+                    </div>
+                    <span class="ne-badge ne-badge-secondary">Label</span>
+                    <span class="ne-badge ne-badge-black">Label</span>
+                  </div>
+                  <div style="display: flex; gap: 16px">
+                    <span class="ne-badge ne-badge-primary ne-badge-disabled"
+                      >Label</span
+                    >
+                    <div class="ne-math">
+                      <span
+                        class="ne-badge ne-badge-secondary ne-badge-disabled"
+                        >Label</span
+                      >
+                    </div>
+                    <span class="ne-badge ne-badge-secondary ne-badge-disabled"
+                      >Label</span
+                    >
+                    <span class="ne-badge ne-badge-black ne-badge-disabled"
+                      >Label</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="/inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>
