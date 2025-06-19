@@ -2842,7 +2842,7 @@ button {
   width: 100%;
 }
 .ne-detail-channel-tooltip {
-  transform: translate(-20px, -5px);
+  transform: translate(-19px, -5px);
 }
 .ne-detail-channel__menu {
   display: flex;
