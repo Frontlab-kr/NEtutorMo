@@ -1122,12 +1122,12 @@
   z-index: 100;
 }
 .ne-select-default .list {
-  left: -1px;
   min-width: 98px;
   margin: -34px 0 0 0;
   padding: 0;
   border-radius: 12px;
   border: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+  transition: none;
 }
 .ne-select-default .list .option {
   height: 33px;
