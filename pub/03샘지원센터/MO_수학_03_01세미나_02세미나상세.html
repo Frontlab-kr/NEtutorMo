@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+
+    <script src="../../inc/js/2025.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/service_ma.css" />
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div
+        include-html="../../inc/layout/header.html"
+        style="position: sticky; top: 0; z-index: 100"
+      ></div>
+      <!-- //header -->
+
+      <style>
+        .ne {
+          padding: 0 0 60px 0;
+        }
+      </style>
+      <main id="content" data-pate-title="NE 세미나">
+        <div class="ne-detail">
+          <div class="ne-contents">
+            <div class="ne-detail-head">
+              <div class="ne-detail-head-thumb">
+                <img src="../../netutor/renew/pc/temp/detail01.png" alt="" />
+              </div>
+              <div class="ne-detail-head-info">
+                <div class="ne-detail-head-info__badge">
+                  <span class="ne-badge ne-badge-secondary">모집중</span>
+                </div>
+                <div class="ne-detail-head-info__tag">
+                  <a href="">#학원운영</a>
+                  <a href="">#오프라인</a>
+                </div>
+                <div class="ne-detail-head-info__title">
+                  <p>1인 원장 성공학원 세미나</p>
+                </div>
+                <div class="ne-detail-head-info__text">
+                  교재활용부터 학습 목적과 학원 운영 형태별 수업 노하우
+                </div>
+                <div class="ne-detail-head-info__table">
+                  <table>
+                    <caption>
+                      강의 정보
+                    </caption>
+                    <colgroup>
+                      <col style="width: 80px" />
+                      <col style="width: 220px" />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">강사</th>
+                        <td>이화영 원장</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">학년군</th>
+                        <td>초등, 중등</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">정원수</th>
+                        <td>100명</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">진행장소</th>
+                        <td>온라인 Zoom</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">신청시간</th>
+                        <td>YY-MM-DD ~ YY-MM-DD</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">진행일정</th>
+                        <td>YY-MM-DD</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="ne-detail-contents-link">
+              <div class="ne-contents">
+                <a href="#ne-detail-editor" class="active">상세내용</a>
+                <a href="#ne-detail-related">관련 교재 / 서비스</a>
+              </div>
+              <script>
+                $(document).ready(function () {
+                  const $menuLinks = $(
+                    '.ne-detail-contents-link .ne-contents a'
+                  );
+                  const sections = [];
+
+                  $menuLinks.each(function () {
+                    const targetId = $(this).attr('href');
+                    const $section = $(targetId);
+                    if ($section.length) {
+                      sections.push({
+                        link: $(this),
+                        section: $section,
+                      });
+                    }
+                  });
+
+                  const offset = 100;
+                  $(window).on('scroll', function () {
+                    const scrollTop = $(window).scrollTop();
+                    let current = null;
+
+                    for (let i = 0; i < sections.length; i++) {
+                      const { link, section } = sections[i];
+                      const sectionTop = section.offset().top;
+                      if (scrollTop >= sectionTop - offset) {
+                        current = link;
+                      }
+                    }
+
+                    // scroll이 첫 번째 섹션보다 위에 있을 경우 첫 번째 탭 유지
+                    if (!current && sections.length > 0) {
+                      current = sections[0].link;
+                    }
+
+                    $menuLinks.removeClass('active');
+                    if (current) {
+                      current.addClass('active');
+                    }
+                  });
+                });
+              </script>
+            </div>
+
+            <div class="ne-detail-contents">
+              <div class="ne-detail-editor" id="ne-detail-editor">
+                <div style="text-align: center">
+                  <img
+                    src="../../netutor/renew/pc/temp/detail02.png"
+                    alt=""
+                  /><img
+                    src="../../netutor/renew/pc/temp/detail02.png"
+                    alt=""
+                  /><img
+                    src="../../netutor/renew/pc/temp/detail02.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="ne-detail-related" id="ne-detail-related">
+                <div class="ne-detail-related__title">관련 교재 / 서비스</div>
+                <div class="ne-detail-related-contents">
+                  <div class="ne-detail-related-list">
+                    <div class="ne-detail-related-list-item">
+                      <div class="ne-detail-related-list-item__head">
+                        <div class="ne-detail-related-list-item__thumb">
+                          <img
+                            src="../../netutor/renew/pc/temp/detail03.png"
+                            alt=""
+                          />
+                        </div>
+                        <div class="ne-detail-related-list-item__info">
+                          <div class="ne-detail-related-list-item__badge">
+                            <span
+                              class="ne-badge ne-badge-secondary ne-badge-sm"
+                              >초3~4학년</span
+                            >
+                          </div>
+                          <div class="ne-detail-related-list-item__title">
+                            달곰한 Literacy Reading Level 1
+                          </div>
+                          <div class="ne-detail-related-list-item__text">
+                            3회독 학습법으로 완성하는 영어 문해력 3회독
+                            학습법으로 완성하는 영어 문해력 3회독 학습법으로
+                            완성하는 영어 문해력 3회독 학습법으로 완성하는 영어
+                            문해력 3회독 학습법으로 완성하는 영어 문해력
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ne-detail-related-list-item__button">
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-tertiary ne-btn-sm"
+                        >
+                          상세보기
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ne-detail-related-button">
+                  <div class="ne-more">
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded ne-btn-sm"
+                    >
+                      <i class="ico-16-more"></i>
+                      더보기
+                    </button>
+                  </div>
+                </div>
+
+                <script>
+                  $(document).ready(function () {
+                    $('.ne-detail-related-button .ne-btn').one(
+                      'click',
+                      function () {
+                        const $list = $('.ne-detail-related-list');
+                        const $items = $list.find(
+                          '.ne-detail-related-list-item'
+                        );
+
+                        // 최근 아이템 2개 복제
+                        const $template1 = $items.eq(-2).clone(true);
+                        const $template2 = $items.eq(-1).clone(true);
+
+                        // 복제된 요소 2세트(총 4개) 추가
+                        $list.append(
+                          $template1.clone(true),
+                          $template2.clone(true)
+                        );
+
+                        // 더보기 버튼 숨기기
+                        $('.ne-detail-related-button').hide();
+                      }
+                    );
+                  });
+                </script>
+              </div>
+            </div>
+            <div class="ne-detail-button">
+              <div class="ne-detail-button-end">
+                <button
+                  type="button"
+                  class="ne-btn ne-btn-lg ne-btn-primary ne-btn-outlined"
+                >
+                  목록보기
+                </button>
+              </div>
+            </div>
+
+            <div class="ne-detail-foot">
+              <div class="ne-detail-head-info__button">
+                <button type="button" class="ne-btn ne-btn-primary ne-btn-lg">
+                  신청하기
+                </button>
+                <button
+                  class="ne-btn ne-btn-icononly ne-btn-outlined"
+                  data-toggle="layer01"
+                  data-position="top-right"
+                >
+                  <i class="ico-28-share-black"></i>
+                </button>
+              </div>
+              <div
+                class="ne-sns-layer"
+                id="layer01"
+                role="dialog"
+                aria-hidden="true"
+              >
+                <button type="button" class="ne-btn ne-btn-text">
+                  <i class="ico-28-share"></i>
+                  URL 복사
+                </button>
+                <button type="button" class="ne-btn ne-btn-text">
+                  <i class="ico-28-kakao"></i>
+                  카카오톡
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

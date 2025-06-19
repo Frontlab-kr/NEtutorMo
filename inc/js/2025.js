@@ -1,22 +1,606 @@
 $(document).ready(function () {
   //select
-  $('select').niceSelect();
+  $.fn.niceSelect = function (method) {
+    // Methods
+    if (typeof method == 'string') {
+      if (method == 'update') {
+        this.each(function () {
+          var $select = $(this);
+          var $dropdown = $(this).next('.ne-select');
+          var open = $dropdown.hasClass('open');
+
+          if ($dropdown.length) {
+            $dropdown.remove();
+            create_nice_select($select);
+
+            if (open) {
+              $select.next().trigger('click');
+            }
+          }
+        });
+      } else if (method == 'destroy') {
+        this.each(function () {
+          var $select = $(this);
+          var $dropdown = $(this).next('.ne-select');
+
+          if ($dropdown.length) {
+            $dropdown.remove();
+            $select.css('display', '');
+          }
+        });
+        if ($('.ne-select').length == 0) {
+          $(document).off('.ne_select');
+        }
+      } else {
+        console.log('Method "' + method + '" does not exist.');
+      }
+      return this;
+    }
+
+    // Hide native select
+    this.hide();
+
+    // Create custom markup
+    this.each(function () {
+      var $select = $(this);
+
+      if (!$select.next().hasClass('ne-select')) {
+        create_nice_select($select);
+      }
+    });
+
+    function create_nice_select($select) {
+      $select.after(
+        $('<div></div>')
+          .addClass('ne-select')
+          .addClass($select.attr('class') || '')
+          .addClass($select.attr('disabled') ? 'disabled' : '')
+          .attr('tabindex', $select.attr('disabled') ? null : '0')
+          .html('<span class="current"></span><ul class="list"></ul>')
+      );
+
+      var $dropdown = $select.next();
+      var $options = $select.find('option');
+
+      var $selectedOption = $select.find('option:selected');
+      var selectValue = $selectedOption.val();
+      var placeholder =
+        $select.data('placeholder') || $select.attr('data-placeholder');
+
+      var isPlaceholder = typeof placeholder !== 'undefined';
+
+      var $matchedOption = $options.filter('[value="' + selectValue + '"]');
+
+      var currentText = isPlaceholder
+        ? placeholder || '&nbsp;'
+        : $selectedOption.data('display') || $selectedOption.text();
+
+      var $current = $dropdown.find('.current');
+      $current.text(currentText);
+      $current.toggleClass('placeholder', isPlaceholder);
+
+      $options.each(function (i) {
+        var $option = $(this);
+        var display = $option.data('display');
+
+        var isSelected =
+          !isPlaceholder && $option.val() === selectValue ? ' selected' : '';
+
+        $dropdown.find('ul').append(
+          $('<li></li>')
+            .attr('data-value', $option.val())
+            .attr('data-display', display || null)
+            .addClass(
+              'option' +
+                isSelected +
+                ($option.is(':disabled') ? ' disabled' : '')
+            )
+            .append($('<p></p>').text($option.text()))
+        );
+      });
+    }
+
+    /* Event listeners */
+
+    // Unbind existing events in case that the plugin has been initialized before
+    $(document).off('.ne_select');
+
+    // Open/close
+    $(document).on('click.ne_select', '.ne-select', function (event) {
+      var $dropdown = $(this);
+
+      $('.ne-select').not($dropdown).removeClass('open');
+      $dropdown.toggleClass('open');
+
+      if ($dropdown.hasClass('open')) {
+        $dropdown.find('.option');
+        $dropdown.find('.focus').removeClass('focus');
+        $dropdown.find('.selected').addClass('focus');
+      } else {
+        $dropdown.focus();
+      }
+    });
+
+    // Close when clicking outside
+    $(document).on('click.ne_select', function (event) {
+      if ($(event.target).closest('.ne-select').length === 0) {
+        $('.ne-select').removeClass('open').find('.option');
+      }
+    });
+
+    // Option click
+    $(document).on(
+      'click.ne_select',
+      '.ne-select .option:not(.disabled)',
+      function (event) {
+        var $option = $(this);
+        var $dropdown = $option.closest('.ne-select');
+        var $current = $dropdown.find('.current');
+
+        $dropdown.find('.selected').removeClass('selected');
+        $option.addClass('selected');
+
+        var text = $option.data('display') || $option.text();
+        $dropdown.find('.current').text(text);
+
+        // ✅ placeholder 클래스 제거
+        $current.removeClass('placeholder');
+
+        $dropdown.prev('select').val($option.data('value')).trigger('change');
+      }
+    );
+
+    // Keyboard events
+    $(document).on('keydown.ne_select', '.ne-select', function (event) {
+      var $dropdown = $(this);
+      var $focused_option = $(
+        $dropdown.find('.focus') || $dropdown.find('.list .option.selected')
+      );
+
+      // Space or Enter
+      if (event.keyCode == 32 || event.keyCode == 13) {
+        if ($dropdown.hasClass('open')) {
+          $focused_option.trigger('click');
+        } else {
+          $dropdown.trigger('click');
+        }
+        return false;
+        // Down
+      } else if (event.keyCode == 40) {
+        if (!$dropdown.hasClass('open')) {
+          $dropdown.trigger('click');
+        } else {
+          var $next = $focused_option.nextAll('.option:not(.disabled)').first();
+          if ($next.length > 0) {
+            $dropdown.find('.focus').removeClass('focus');
+            $next.addClass('focus');
+          }
+        }
+        return false;
+        // Up
+      } else if (event.keyCode == 38) {
+        if (!$dropdown.hasClass('open')) {
+          $dropdown.trigger('click');
+        } else {
+          var $prev = $focused_option.prevAll('.option:not(.disabled)').first();
+          if ($prev.length > 0) {
+            $dropdown.find('.focus').removeClass('focus');
+            $prev.addClass('focus');
+          }
+        }
+        return false;
+        // Esc
+      } else if (event.keyCode == 27) {
+        if ($dropdown.hasClass('open')) {
+          $dropdown.trigger('click');
+        }
+        // Tab
+      } else if (event.keyCode == 9) {
+        if ($dropdown.hasClass('open')) {
+          return false;
+        }
+      }
+    });
+
+    // Detect CSS pointer-events support, for IE <= 10. From Modernizr.
+    var style = document.createElement('a').style;
+    style.cssText = 'pointer-events:auto';
+    if (style.pointerEvents !== 'auto') {
+      $('html').addClass('no-csspointerevents');
+    }
+
+    return this;
+  };
+
+  $('.ne select').niceSelect();
+  $('.ne-modal select').niceSelect();
 
   //tab
-  const tabs = document.querySelectorAll('.ne-tabs-item');
-  const contents = document.querySelectorAll('.ne-tabs-content');
+  document.querySelectorAll('.ne-tabs').forEach((tabsContainer) => {
+    const tabLinks = tabsContainer.querySelectorAll('.ne-tabs-item');
 
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      // 모든 탭과 컨텐츠에서 active 제거
-      tabs.forEach((t) => t.classList.remove('active'));
-      contents.forEach((c) => c.classList.remove('active'));
+    tabLinks.forEach((tab) => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
 
-      // 클릭한 탭과 해당 컨텐츠에 active 추가
-      tab.classList.add('active');
-      document
-        .getElementById(tab.getAttribute('data-tab'))
-        .classList.add('active');
+        // 탭 그룹 기준으로만 처리
+        const container = tab.closest('.ne-tabs').parentElement;
+
+        // 탭 그룹 안 모든 탭 비활성화
+        container
+          .querySelectorAll('.ne-tabs-item')
+          .forEach((t) => t.classList.remove('active'));
+
+        // 콘텐츠 영역 비활성화
+        container
+          .querySelectorAll('.ne-tabs-contents')
+          .forEach((c) => c.classList.remove('active'));
+
+        // 현재 탭 활성화
+        tab.classList.add('active');
+
+        // 대상 콘텐츠 활성화
+        const targetId = tab.getAttribute('href').replace('#', '');
+        const targetContent = container.querySelector(`#${targetId}`);
+        if (targetContent) {
+          targetContent.classList.add('active');
+        }
+      });
     });
+  });
+
+  //input
+  $(document).on('input', '.ne-input input', function () {
+    const $parent = $(this).closest('.ne-input');
+    if ($(this).val().trim() !== '') {
+      $parent.addClass('has-value'); // 원하는 클래스
+    } else {
+      $parent.removeClass('has-value');
+    }
+  });
+  $(document).on('click', '.ne-input button', function () {
+    const $parent = $(this).closest('.ne-input');
+    $(this).siblings('input').val('');
+    $parent.removeClass('has-value');
+  });
+
+  //password
+  $('.ne-password button').on('click', function () {
+    const $container = $(this).closest('.ne-password');
+    const $input = $container.find('input');
+
+    // active 클래스 토글
+    $container.toggleClass('active');
+
+    // type 토글
+    const isPassword = $input.attr('type') === 'password';
+    $input.attr('type', isPassword ? 'text' : 'password');
+  });
+
+  //faq
+  $('.ne-faq-item__question').on('click', function () {
+    const $item = $(this).closest('.ne-faq-item');
+    const $answer = $(this).next('.ne-faq-item__answer');
+
+    $('.ne-faq-item').not($item).removeClass('active');
+    $('.ne-faq-item__answer')
+      .not($answer)
+      .each(function () {
+        const $el = $(this);
+        if ($el.height() > 0) {
+          $el.css('height', $el.height() + 'px');
+          $el[0].offsetHeight;
+          $el.css('height', '0px');
+        }
+      });
+
+    if ($answer.height() > 0) {
+      $answer.css('height', $answer.height() + 'px');
+      $answer[0].offsetHeight;
+      $answer.css('height', '0px');
+      $item.removeClass('active');
+    } else {
+      $answer.css('height', $answer[0].scrollHeight + 'px');
+      $item.addClass('active');
+    }
+  });
+
+  $('.ne-faq-item__answer').on('transitionend', function () {
+    if ($(this).height() !== 0) {
+      $(this).css('height', 'auto');
+    }
+  });
+
+  //class
+  $('.ne-class-home-class-head h4 button').on('click', function () {
+    const $item = $(this).closest('.ne-class-home-class');
+    const $answer = $(this)
+      .closest('.ne-class-home-class')
+      .find('.ne-class-home-class-contents');
+
+    $('.ne-class-home-class').not($item).removeClass('active');
+    $('.ne-class-home-class-contents')
+      .not($answer)
+      .each(function () {
+        const $el = $(this);
+        if ($el.height() > 0) {
+          $el.css('height', $el.height() + 'px');
+          $el[0].offsetHeight;
+          $el.css('height', '0px');
+        }
+      });
+
+    if ($answer.height() > 0) {
+      $answer.css('height', $answer.height() + 'px');
+      $answer[0].offsetHeight;
+      $answer.css('height', '0px');
+      $item.removeClass('active');
+    } else {
+      $answer.css('height', $answer[0].scrollHeight + 'px');
+      $item.addClass('active');
+    }
+  });
+
+  $('.ne-class-home-class').on('transitionend', function () {
+    if ($(this).height() !== 0) {
+      $(this).css('height', 'auto');
+    }
+  });
+
+  //modal
+  //modal
+  // 열기 버튼 클릭 시
+  document.querySelectorAll('[data-bs-target]').forEach((button) => {
+    button.addEventListener('click', function () {
+      const targetId = this.getAttribute('data-bs-target');
+      const modal = document.querySelector(targetId);
+      if (modal) {
+        modal.classList.add('show');
+        document.body.classList.add('modal-open'); // ✅ html에 클래스 추가
+
+        // 백드롭 추가
+        const backdrop = document.createElement('div');
+        backdrop.className = 'ne-modal-backdrop fade';
+        document.body.appendChild(backdrop);
+        requestAnimationFrame(() => backdrop.classList.add('show'));
+      }
+    });
+  });
+
+  // 닫기 버튼 클릭, ESC, 백드롭 클릭 등 닫을 때마다
+  function closeModal(modal) {
+    if (modal) {
+      modal.classList.remove('show');
+    }
+
+    const backdrop = document.querySelector('.ne-modal-backdrop');
+    if (backdrop) {
+      backdrop.classList.remove('show');
+      setTimeout(() => backdrop.remove(), 300);
+    }
+
+    document.body.classList.remove('modal-open'); // ✅ html 클래스 제거
+  }
+
+  // ESC 키
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.ne-modal.show').forEach((modal) => {
+        closeModal(modal);
+      });
+    }
+  });
+
+  // 닫기 버튼
+  document.addEventListener('click', function (e) {
+    const dismissBtn = e.target.closest('[data-bs-dismiss="modal"]');
+    if (dismissBtn) {
+      const modal = dismissBtn.closest('.ne-modal');
+      closeModal(modal);
+    }
+  });
+
+  // dialog 외부 클릭 시
+  document.addEventListener('click', function (e) {
+    const modal = e.target.closest('.ne-modal');
+    const content = e.target.closest('.ne-modal-content');
+
+    if (modal && !content) {
+      closeModal(modal);
+    }
+  });
+
+  //layer
+  $(document).on('click', '[data-toggle^="layer"]', function (e) {
+    const $button = $(this);
+    const layerId = $button.data('toggle');
+    const position = $button.data('position') || 'bottom';
+    const $layer = $('#' + layerId);
+
+    // 초기화
+    $('.ne-sns-layer').removeClass(
+      'active top top-left top-right bottom bottom-left bottom-right'
+    );
+
+    // 위치 클래스 추가
+    $layer.addClass('active').addClass(position);
+
+    // 버튼 위치 기준으로 레이어 배치 (간단히 absolute)
+    const offset = $button.offset();
+    const height = $button.outerHeight();
+    const width = $button.outerWidth();
+
+    // 기본 위치값 (예시)
+    let top = offset.top + height + 10;
+    let left = offset.left;
+
+    if (position.includes('top')) {
+      top = offset.top - $layer.outerHeight() - 10;
+    }
+
+    if (position.includes('left')) {
+      left = offset.left;
+    } else if (position.includes('right')) {
+      left = offset.left + width - $layer.outerWidth();
+    } else if (position === 'top' || position === 'bottom') {
+      left = offset.left + width / 2 - $layer.outerWidth() / 2;
+    }
+
+    $layer.css({
+      position: 'absolute',
+      top: `${top}px`,
+      left: `${left}px`,
+    });
+  });
+
+  $(document).on('click', function (e) {
+    if (!$(e.target).closest('.ne-sns-layer, [data-toggle]').length) {
+      $('.ne-sns-layer').removeClass('active');
+    }
+  });
+
+  //tooltip
+  $(document).on('click', '[data-toggle^="tooltip"]', function (e) {
+    const $button = $(this);
+    const tooltipId = $button.data('toggle');
+    const position = $button.data('position') || 'bottom';
+    const $tooltip = $('#' + tooltipId);
+
+    // ▶️ 이미 열려 있는 상태라면 닫고 리턴 (토글 효과)
+    if ($tooltip.hasClass('active')) {
+      $tooltip.removeClass(
+        'active top top-left top-right bottom bottom-left bottom-right'
+      );
+      return; // ❗ 이미 열려있던 툴팁이면 토글로 닫기만
+    }
+
+    // 모든 툴팁 초기화
+    $('.ne-tooltip').removeClass(
+      'active top top-left top-right bottom bottom-left bottom-right'
+    );
+
+    // ▶️ 내부 <p> 기준 높이 및 너비 측정
+    const $paragraph = $tooltip.find('p');
+    if ($paragraph.length) {
+      const pHeight = $paragraph.outerHeight(true) + 40;
+      const pWidth = $paragraph.outerWidth(true) + 90;
+      $tooltip.css({
+        height: pHeight + 'px',
+        width: pWidth + 'px',
+      });
+    } else {
+      $tooltip.css({
+        height: 'auto',
+        width: 'auto',
+      });
+    }
+
+    // 위치 클래스 추가
+    $tooltip.addClass('active').addClass(position);
+
+    // 버튼 기준 좌표 계산
+    const buttonOffset = $button.offset();
+    const tooltipHeight = $tooltip.outerHeight();
+    const tooltipWidth = $tooltip.outerWidth();
+    const buttonHeight = $button.outerHeight();
+    const buttonWidth = $button.outerWidth();
+
+    let top = buttonOffset.top + buttonHeight + 10;
+    let left = buttonOffset.left;
+
+    if (position.includes('top')) {
+      top = buttonOffset.top - tooltipHeight - 10;
+    }
+
+    if (position.includes('left')) {
+      left = buttonOffset.left;
+    } else if (position.includes('right')) {
+      left = buttonOffset.left + buttonWidth - tooltipWidth;
+    } else if (position === 'top' || position === 'bottom') {
+      left = buttonOffset.left + buttonWidth / 2 - tooltipWidth / 2;
+    }
+
+    // 모달 내부일 경우 위치 보정
+    const $modal = $button.closest('.ne-modal');
+    if ($modal.length) {
+      const modalOffset = $modal.offset();
+      top -= modalOffset.top;
+      left -= modalOffset.left;
+      $tooltip
+        .css({
+          position: 'absolute',
+          top: `${top}px`,
+          left: `${left}px`,
+        })
+        .appendTo($modal);
+    } else {
+      $tooltip
+        .css({
+          position: 'absolute',
+          top: `${top}px`,
+          left: `${left}px`,
+        })
+        .appendTo('body');
+    }
+  });
+
+  // 외부 클릭 시 툴팁 닫기
+  $(document).on('click', function (e) {
+    if (!$(e.target).closest('.ne-tooltip, [data-toggle]').length) {
+      $('.ne-tooltip').removeClass('active');
+    }
+  });
+
+  // 툴팁 내 버튼 클릭 시 툴팁 닫기
+  $(document).on('click', '.ne-tooltip .ne-btn', function () {
+    $(this).closest('.ne-tooltip').removeClass('active');
+  });
+
+  //datepicker
+  $(document).ready(function () {
+    if ($('.input_date').length > 0) {
+      $('.input_date').datepicker();
+      $.datepicker.setDefaults({
+        dateFormat: 'yy-mm-dd',
+        prevText: '이전 달',
+        nextText: '다음 달',
+        closeText: '닫기',
+        currentText: '오늘',
+        monthNames: [
+          '1월',
+          '2월',
+          '3월',
+          '4월',
+          '5월',
+          '6월',
+          '7월',
+          '8월',
+          '9월',
+          '10월',
+          '11월',
+          '12월',
+        ],
+        monthNamesShort: [
+          '1월',
+          '2월',
+          '3월',
+          '4월',
+          '5월',
+          '6월',
+          '7월',
+          '8월',
+          '9월',
+          '10월',
+          '11월',
+          '12월',
+        ],
+        dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+        dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+        dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+        showMonthAfterYear: true,
+        yearSuffix: '년',
+        showButtonPanel: true,
+      });
+    }
   });
 });

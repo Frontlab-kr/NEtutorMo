@@ -26,12 +26,10 @@ function win_resize(){
 											  clearTimeout(is_Resized);
 									}
 			}
-
 		}
 		catch (e) {
 		}
 }
-  
 /*
 $(function(){
 	// GNB
@@ -282,12 +280,6 @@ function fn_logout(){
 	}
 }
 
-//로그아웃(자동)
-function fn_logout_auto(){
-	document.logOutForm.submit();
-}
-
-
 // iframe resize
 function autoResize(obj)
 {
@@ -376,6 +368,38 @@ function popEbookUrl(strUrl){
 	});
  }
 
+// 학생추가
+function popSearchStd_new(){
+		 var sizeX = 820;
+		 var sizeY = 900;
+		 var popSearchStd = window.open(
+				"/pages/class/pop/popSearchStd.asp",
+				"yWin",
+				"left=0, top=0, width="+ sizeX + ", height="+ sizeY + ", scrollbars=yes, status=no, resizable=yes, direction=yes, location=no, menubar=no, toolbar=no, titlebar=no"
+		 );
+	}
+
+// 검색으로 교재추가 팝업 창 띄우기
+function popSearchBooks_new(){
+	 var sizeX = 820;
+	 var sizeY = 950;
+	 var popSearchBooks = window.open(
+			"/pages/class/pop/popSearchBooks.asp",
+			"bWin",
+			"left=100, top=100, width="+ sizeX + ", height="+ sizeY + ", scrollbars=yes, status=no, resizable=yes, direction=yes, location=no, menubar=no, toolbar=no, titlebar=no"
+)}
+
+// 교재맵으로 교재추가 팝업 
+function popSearchBooksMap_New(){
+	var sizeX = screen.availWidth;
+	var sizeY = screen.availHeight;
+	sizeX = (sizeX-(sizeX*0.2));
+	sizeY = (sizeY-65);
+   var popSearchBooksMap = window.open(
+		   "/pages/class/pop/popSearchBooksMap.asp",
+		   "mWin",
+		   "left=0, top=0, width="+ sizeX + ", height="+ sizeY + ", scrollbars=yes, status=no, resizable=yes, direction=yes, location=no, menubar=no, toolbar=no, titlebar=no"
+)}
 
 
  //비밀번호 변경 팝업 창 띄우기
@@ -438,9 +462,9 @@ function fnc_chkpwdForce(pwdtxt) {
 
 		var numberConut = 0;
 		var textConut = 0;
-		var specialConut = 0;	
+		var specialConut = 0;
 //		var yearFlag = false;
-//		var dateFlag = false; 
+//		var dateFlag = false;
 
 		var textRegular = /[a-zA-Z]+/;
 		var numberRegular = /[0-9]+/;
@@ -453,9 +477,9 @@ function fnc_chkpwdForce(pwdtxt) {
 //		if (password.indexOf(date) > -1 ) dateFlag = true;
 		var isPW = /^[a-zA-Z0-9!@#$%^&*?_~]{8,12}$/;
 		if( !isPW.test(pwdtxt) ) {
-			alert("비밀번호는 8-12자 영문/숫자/특수문자 중 3가지 조합으로 입력해주세요.\r\n특수문자는 !,@,#,$,%,^,&,*,?,_,~만 사용 가능합니다."); 
-			return false; 
-		}				
+			alert("비밀번호는 8~12자리의 영문/숫자/특수문자 중 3가지 조합으로 입력해주세요.\r\n특수문자는 !,@,#,$,%,^,&,*,?,_,~만 사용 가능합니다.");
+			return false;
+		}
 
 		var samCount = 0;
 		var continuCount = 0;
@@ -474,7 +498,7 @@ function fnc_chkpwdForce(pwdtxt) {
 			if(char1 == char2) {
 				forSamCount = 2;
 				if(char1 == char3) {
-					forSamCount = 3;	
+					forSamCount = 3;
 					if(char1 == char4){
 						forSamCount = 4;
 					}
@@ -517,8 +541,8 @@ function fnc_chkpwdForce(pwdtxt) {
 
 		}
 
-		if (pwdtxt.length < 7 || pwdtxt.length > 50) {
-			alert("비밀번호는 8-12자 영문/숫자/특수문자 중 3가지 조합으로 입력해주세요.\r\n특수문자는 !,@,#,$,%,^,&,*,?,_,~만 사용 가능합니다."); 
+		if (pwdtxt.length < 8 || pwdtxt.length > 12) {
+			alert("비밀번호는 8~12자리의 영문/숫자/특수문자 중 3가지 조합으로 입력해주세요.\r\n특수문자는 !,@,#,$,%,^,&,*,?,_,~만 사용 가능합니다.");
 			return false;
 		}else if (samCount >= 1) {
 			alert('연속 같은 문자가 있습니다.\r\n중복 및 연속 문자 4자리 이상 사용 불가입니다.\r\n영문/숫자/특수문자 중 3가지를  조합해서 비밀번호를 입력하세요.');
@@ -527,7 +551,7 @@ function fnc_chkpwdForce(pwdtxt) {
 //			alert('연속 문자가 있습니다.');
 //			return false;
 		} else if (textConut + numberConut + specialConut <= 2) {
-			alert('비밀번호는 8-12자 영문/숫자/특수문자 중 3가지 조합으로 입력해주세요.\r\n특수문자는 !,@,#,$,%,^,&,*,?,_,~만 사용 가능합니다.');
+			alert('비밀번호는 8~12자리의 영문/숫자/특수문자 중 3가지 조합으로 입력해주세요.\r\n특수문자는 !,@,#,$,%,^,&,*,?,_,~만 사용 가능합니다.');
 			return false;
 		}
 
@@ -535,13 +559,121 @@ function fnc_chkpwdForce(pwdtxt) {
 
 }
 
+
+function fnc_chkpwdForceStud(pwdtxt) {
+		var numberConut = 0;
+		var textConut = 0;
+		var specialConut = 0;
+//		var yearFlag = false;
+//		var dateFlag = false;
+
+		var textRegular = /[a-zA-Z]+/;
+		var numberRegular = /[0-9]+/;
+//		var specialRegular = /[!@#$%^&*?_~]/;
+
+		if (textRegular.test(pwdtxt)) textConut = 1;
+		if (numberRegular.test(pwdtxt)) numberConut = 1;
+//		if (specialRegular.test(pwdtxt)) specialConut = 1;
+//		if (password.indexOf(year) > -1 ) yearFlag = true;
+//		if (password.indexOf(date) > -1 ) dateFlag = true;
+		var isPW = /^[a-zA-Z0-9]{4,8}$/;
+		if( !isPW.test(pwdtxt) ) {
+			alert("비밀번호는 4~8자리의 영문, 숫자 2가지 조합으로 입력해주세요.");
+			return false;
+		}
+
+		var samCount = 0;
+		var continuCount = 0;
+		for(var i=0; i < pwdtxt.length; i++) {
+			var forSamCount = 0;
+			var forContinuCount = 0;
+			var char1 = pwdtxt.charAt(i);
+			var char2 = pwdtxt.charAt(i+1);
+			var char3 = pwdtxt.charAt(i+2);
+
+			if(!char3) {
+				break;
+			}
+			//동일문자 카운트
+			if(char1 == char2) {
+				forSamCount = 2;
+				if(char1 == char3) {
+					forSamCount = 3;					
+				}
+			}
+
+			if(forSamCount == 3) {
+				samCount = 1;
+			}
+
+
+			//4개이상
+			if(char1.charCodeAt(0) - char2.charCodeAt(0) == 1 && char2.charCodeAt(0) - char3.charCodeAt(0) == 1) {
+				samCount = 1;
+			} else if(char1.charCodeAt(0) - char2.charCodeAt(0) == -1 && char2.charCodeAt(0) - char3.charCodeAt(0) == -1) {
+				samCount = 1;
+			}
+/*
+			else if(char1.charCodeAt(0) - char2.charCodeAt(0) == -1 && char2.charCodeAt(0) - char3.charCodeAt(0) == -1 && char3.charCodeAt(0) - char4.charCodeAt(0) == -1) {
+				forContinuCount = 3;
+			}
+			else if(char1.charCodeAt(0) - char2.charCodeAt(0) == 1 && char2.charCodeAt(0) - char3.charCodeAt(0) == 1) {
+				forContinuCount = 3;
+			}
+			else if(char1.charCodeAt(0) - char2.charCodeAt(0) == -1 && char2.charCodeAt(0) - char3.charCodeAt(0) == -1) {
+				forContinuCount = 3;
+			}
+			else if(char1.charCodeAt(0) - char2.charCodeAt(0) == 1) {
+				forContinuCount = 2;
+			}
+			else if(char1.charCodeAt(0) - char2.charCodeAt(0) == -1) {
+				forContinuCount = 2;
+			}
+
+			if(forContinuCount > continuCount) {
+				continuCount = forContinuCount;
+			}
+*/
+
+		}
+
+		if (pwdtxt.length < 4 || pwdtxt.length > 8) {
+			alert("비밀번호는 4~8자리의 영문, 숫자 2가지 조합으로 입력해주세요.");
+			return false;
+		}else if (samCount >= 1) {
+			alert('연속 같은 문자가 있습니다.\r\n중복 및 연속 문자 3자리 이상 사용 불가입니다.\r\n영문, 숫자를  조합해서 비밀번호를 입력하세요.');
+			return false;
+//		} else if (continuCount >= 1) {
+//			alert('연속 문자가 있습니다.');
+//			return false;
+		} else if (textConut + numberConut < 2) {
+			alert('비밀번호는 4~8자리의 영문, 숫자 2가지 조합으로 입력해주세요.');
+			return false;
+		}
+		return true;
+}
+
+
 function fnc_checkID(){
 	var str = document.regForm1.userid.value;
 	var isID = /^[a-zA-Z0-9_]{4,12}$/;
 
 	if( !isID.test(str) ) {
 		alert("아이디는 4-12자 영문자와 숫자,특수기호(_)만 사용할 수 있습니다."); 
-		document.regForm.userid.focus();
+		document.regForm1.userid.focus();
+		return false; 
+	}
+
+	return true;
+}
+
+function fnc_checkID_student(){
+	var str = document.regForm1.userid.value;
+	var isID = /^[a-zA-Z0-9_]{4,20}$/;
+
+	if( !isID.test(str) ) {
+		alert("아이디는 4~20자 영문자, 숫자, 특수문자 _만 사용할 수 있습니다."); 
+		document.regForm1.userid.focus();
 		return false; 
 	}
 
@@ -559,13 +691,7 @@ function popSURTest(testNum,apSeq){
 		   "/level_test/pages/leveltest_question.asp?qpSeq="+testNum+"&qpinum=1&apSeq="+apSeq,
 		   "",
 		   "left=0, top=0, width="+ sizeX + ", height="+ sizeY + ", scrollbars=yes, status=no, resizable=no, direction=yes, location=no, menubar=no, toolbar=no, titlebar=no"
-	)
-
-	if (popLevelTest == null){
-		alert("팝업 차단이 설정되어 있습니다. 브라우저 설정에서 '팝업차단해제' 후 학습을 진행해주세요.");
-	}
-
-}
+)}
 // 학습체험하기
 function popExperienceTest(testNum,apSeq){
 	var sizeX = screen.availWidth;
@@ -576,13 +702,7 @@ function popExperienceTest(testNum,apSeq){
 		   "/level_test/pages/leveltest_question.asp?qpSeq="+testNum+"&qpinum=1&apSeq="+apSeq,
 		   "",
 		   "left=0, top=0, width="+ sizeX + ", height="+ sizeY + ", scrollbars=yes, status=no, resizable=no, direction=yes, location=no, menubar=no, toolbar=no, titlebar=no"
-	)
-
-	if (popLevelTest == null){
-		alert("팝업 차단이 설정되어 있습니다. 브라우저 설정에서 '팝업차단해제' 후 학습을 진행해주세요.");
-	}
-
-}
+)}
 
  // 오답 노트 링크 팝업 
 function popIncorrectTest(rs_ap_seq,pseq,unitSeq,roomSeq,mid){
@@ -591,29 +711,11 @@ function popIncorrectTest(rs_ap_seq,pseq,unitSeq,roomSeq,mid){
 	sizeX = (sizeX-18);
 	sizeY = (sizeY-65);
    var popLevelTest = window.open(
-		  "/level_test/pages/incorrect_note.asp?apSeq="+rs_ap_seq+"&pseq="+pseq+"&unitseq="+unitSeq+"&roomseq="+roomSeq+"&mid="+mid,
+		  "/level_test/pages/incorrect_note.asp?apSeq="+rs_ap_seq+"&pseq="+pseq+"&unitseq="+unitSeq+"&roomseq="+roomSeq+"&m_id="+mid,
 		   "",
 		   "left=0, top=0, width="+ sizeX + ", height="+ sizeY + ", scrollbars=yes, status=no, resizable=no, direction=yes, location=no, menubar=no, toolbar=no, titlebar=no"
-	)
+)}
 
-	if (popLevelTest == null){
-		alert("팝업 차단이 설정되어 있습니다. 브라우저 설정에서 '팝업차단해제' 후 학습을 진행해주세요.");
-	}
-
-}
-//앱 연결 
-function classcard_std_open(set_id,storeurl){
-	var visitedAt = (new Date()).getTime();
-	var userAgent = navigator.userAgent;
-		setTimeout( function () {
-			if ( ( new Date() ).getTime() - visitedAt < 2000 ) {
-				location.href = storeurl;
-			}
-		} ,500 );
-		setTimeout( function () {
-			location.href = "classrunmobile://launch?version=1&set_idx="+set_id;
-		} ,0 );
-}
 
 // 알림장 공지 팝업 
 function popNoticeAlert(rs_ap_seq,pseq,unitSeq,roomSeq,mid){
@@ -624,33 +726,10 @@ function popNoticeAlert(rs_ap_seq,pseq,unitSeq,roomSeq,mid){
 		   "",
 		   "left=0, top=0, width="+ sizeX + ", height="+ sizeY + ", scrollbars=no, status=no, resizable=yes, direction=yes, location=no, menubar=no, toolbar=no, titlebar=no"
 )}
-//클래스 카드 학습반 
-function popStdStudy_new_classcard(userseq, roomseq, bookseq, roomname){
-
-		if (roomseq == undefined){
-			roomseq = ''
-		}
-
-		if (bookseq == undefined){
-			bookseq = ''
-		}
-
-		if (roomname == undefined){
-			roomname = ''
-		}
 
 
-		var sizeX = 500;
-		var sizeY = 700;
-		sizeY = (sizeY-65);
-	    var popStdStudy = window.open(
-			   //"/class/pages/pop/popStdStudy.asp?userseq="+userseq+'&roomseq=<%=lv_roomseq%>&bookseq=<%=lv_bookseq%>',
-			   "/pages/class/pop/pop_card_study.asp?userseq="+userseq+'&roomseq='+roomseq+'&bookseq='+bookseq+'&roomname='+roomname+'',
-			   "tWin",
-			   "left=100, top=0, width="+ sizeX + ", height="+ sizeY + ", scrollbars=yes, status=no, resizable=yes, direction=yes, location=no, menubar=no, toolbar=no, titlebar=no"
-   )}   
 // 학습방
-function popStdStudy_new(userseq, roomseq, bookseq, roomname){
+function popStdStudy_new(userseq, roomseq, bookseq, studytypes){
 		if (roomseq == undefined){
 			roomseq = ''
 		}
@@ -659,20 +738,19 @@ function popStdStudy_new(userseq, roomseq, bookseq, roomname){
 			bookseq = ''
 		}
 
-		if (roomname == undefined){
-			roomname = ''
+		if (studytypes == undefined){
+			studytypes = ''
 		}
 
-
-		var sizeX = 500;
-		var sizeY = 700;
+		var sizeX = 1500;
+		var sizeY = screen.availHeight;
 		sizeY = (sizeY-65);
 	    var popStdStudy = window.open(
 			   //"/class/pages/pop/popStdStudy.asp?userseq="+userseq+'&roomseq=<%=lv_roomseq%>&bookseq=<%=lv_bookseq%>',
-			   "/pages/class/pop/popStdStudy.asp?userseq="+userseq+'&roomseq='+roomseq+'&bookseq='+bookseq+'&roomname='+roomname+'',
+			   "/pages/class/pop/popStdStudy.asp?userseq="+userseq+'&roomseq='+roomseq+'&bookseq='+bookseq+'&studytypes='+studytypes+'',
 			   "tWin",
 			   "left=100, top=0, width="+ sizeX + ", height="+ sizeY + ", scrollbars=yes, status=no, resizable=yes, direction=yes, location=no, menubar=no, toolbar=no, titlebar=no"
-   )}   
+   )}  
 
 //학생 등록
 function fnc_popStudentReg(){
@@ -687,38 +765,62 @@ function fnc_popStudentReg(){
 
 // 레벨테스트 결과
 function goLevelReport(apSeq){
-	//var popLevelTest = window.open("/level_test/pages/leveltest_result.asp?apSeq="+apSeq,"_blank","width=920, height=900, menubar=no,status=yes,scrollbars=yes");
+	window.open("/level_test/pages/leveltest_result.asp?apSeq="+apSeq,"_blank","width=920, height=900, menubar=no,status=yes,scrollbars=yes");
 
-	var sizeX = screen.availWidth;
-	var sizeY = screen.availHeight;
-	sizeX = (sizeX-18);
-	sizeY = (sizeY-65);
-    var popLevelTest = window.open(
-		  "/level_test/pages/leveltest_result.asp?apSeq="+apSeq,
-		   "",
-		   "left=0, top=0, width="+ sizeX + ", height="+ sizeY + ", scrollbars=yes, status=no, resizable=no, direction=yes, location=no, menubar=no, toolbar=no, titlebar=no"
-	)
-	
-	if (popLevelTest == null){
-		alert("팝업 차단이 설정되어 있습니다. 브라우저 설정에서 '팝업차단해제' 후 학습을 진행해주세요.");
-	}
 }
 
 // 레벨테스트 결과
 function goReport(apSeq){
-	//var popLevelTest = window.open("/pages/class/student/report.asp?apSeq="+apSeq,"_blank","width=920, height=900, menubar=no,status=yes,scrollbars=yes");
+	window.open("/pages/class/student/report.asp?apSeq="+apSeq,"_blank","width=1120, height=900, menubar=no,status=yes,scrollbars=yes");
 
+}
+
+// 레벨테스트 결과
+function goResultReport(apSeq){
+	window.open("/level_test/pages/result_report.asp?apSeq="+apSeq,"_blank","width=1120, height=900, menubar=no,status=yes,scrollbars=yes");
+
+}
+
+// 업로드 팝업
+function popUpload_new(serverUrl, types, savepath, formname, textname){
+	var sizeX = 580;
+	var sizeY = 500;
+	var addUrlInfo = '?serverUrl=' + serverUrl + '&types=' + types + '&savepath=' + savepath + '&formname=' + formname + '&textname=' + textname;
+	var popUpload = window.open(
+			"/pages/class/pop/popUpload.asp" + addUrlInfo,
+			"",
+			"left=100, top=100, width="+ sizeX + ", height="+ sizeY + ", scrollbars=no, status=no, resizable=yes, direction=yes, location=no, menubar=no, toolbar=no, titlebar=no"
+	);
+}
+
+
+function btn_del_play() {
+	$(".btn_del").css("display", "");
+}
+
+// 교재 단어 트레이닝 리스트
+function popTrainingLogin(apSeq){
+	window.open("/pages/class/pop/popLogin.asp?apSeq="+apSeq,"_blank","width=600, height=600, menubar=no,status=yes,scrollbars=yes");
+}
+
+// 교재 단어 트레이닝 리스트
+function popTrainingList(b_code,userseq,islogin){
+	var return_val = fnc_authCheck2('<%=GV_EPKI%>', 2, islogin);
+	//alert ('<%=isLogin%>')
+	if (return_val){
+	window.open("/pages/class/pop/popTrainingList.asp?b_code="+b_code+"&userseq="+userseq,"_blank","width=800, height=860, menubar=no,status=yes,scrollbars=yes");
+	}
+}
+
+// 교재 단어 트레이닝
+function popTraining(set_idx,b_code,set_name){
 	var sizeX = screen.availWidth;
 	var sizeY = screen.availHeight;
 	sizeX = (sizeX-18);
 	sizeY = (sizeY-65);
-    var popLevelTest = window.open(
-		  "/pages/class/student/report.asp?apSeq="+apSeq,
-		   "",
-		   "left=0, top=0, width="+ sizeX + ", height="+ sizeY + ", scrollbars=yes, status=no, resizable=no, direction=yes, location=no, menubar=no, toolbar=no, titlebar=no"
-	)
-
-	if (popLevelTest == null){
-		alert("팝업 차단이 설정되어 있습니다. 브라우저 설정에서 '팝업차단해제' 후 학습을 진행해주세요.");
-	}
+	window.open("/pages/class/pop/popTraining.asp?set_idx="+set_idx+"&b_code="+b_code+"&set_name="+set_name,"_blank","width="+sizeX+", height="+sizeY+", menubar=no,status=yes,scrollbars=yes");
+}
+// 숫자만 입력
+function format_input_num(obj){
+	obj.value = obj.value.replace(/[^\d]/g,"");
 }

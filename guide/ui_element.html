@@ -1,71 +1,184 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <script src="/inc/js/include.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script>
-      fetch('/inc/domain/domainheader.html')
-        .then((res) => res.text())
-        .then((html) => {
-          const temp = document.createElement('div');
-          temp.innerHTML = html;
-          [...temp.children].forEach((el) => document.head.appendChild(el));
-        });
-    </script>
+    <script src="../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../inc/css/2025.css" type="text/css" />
+
+    <script src="../inc/js/jquery.js"></script>
+    <script src="../inc/js/jquery.nice-select.min.js"></script>
+    <script src="../inc/js/2025.js"></script>
   </head>
   <body>
-    <div class="ne ne-english">
+    <div class="ne">
       <!-- header -->
-      <div include-html="/inc/layout/header.html"></div>
+      <div include-html="../inc/layout/header.html"></div>
       <!-- //header -->
 
-      <main>
+      <main id="content">
         <div class="ne-contents">
           <div class="ne-guide">
             <div class="ne-guide-item">
-              <div class="ne-guide-item-title">Label</div>
+              <div class="ne-guide-item-title">Pagenation</div>
               <div class="ne-guide-item-contents">
+                <div class="ne-pagination" style="margin: 0">
+                  <a href="#" class="ne-pagination-first">처음</a>
+                  <a href="#" class="ne-pagination-prev">이전</a>
+                  <a href="" class="active">1</a>
+                  <a href="">2</a>
+                  <a href="">3</a>
+                  <a href="">4</a>
+                  <a href="">5</a>
+                  <a href="">6</a>
+                  <a href="">7</a>
+                  <a href="">8</a>
+                  <a href="">9</a>
+                  <a href="">10</a>
+                  <a href="#" class="ne-pagination-next">다음</a>
+                  <a href="#" class="ne-pagination-last">마지막</a>
+                </div>
+              </div>
+            </div>
+            <div class="ne-guide-item">
+              <div class="ne-guide-item-title">Label</div>
+              <div
+                class="ne-guide-item-contents"
+                style="flex-direction: column; gap: 80px"
+              >
                 <div class="ne-guide-item-contents-state">
+                  <h3>Small</h3>
                   <div style="display: flex; gap: 16px">
-                    <span class="ne-badge ne-badge-primary ne-badge-outline"
+                    <span
+                      class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
                       >Label</span
                     >
-                    <div class="ne-math">
-                      <span class="ne-badge ne-badge-secondary ne-badge-outline"
+                    <span
+                      class="ne-badge ne-badge-sm ne-badge-secondary ne-badge-outlined"
+                      >Label</span
+                    >
+                    <div class="root-ma">
+                      <span
+                        class="ne-badge ne-badge-sm ne-badge-secondary ne-badge-outlined"
                         >Label</span
                       >
                     </div>
-                    <span class="ne-badge ne-badge-secondary ne-badge-outline"
+                    <span
+                      class="ne-badge ne-badge-sm ne-badge-black ne-badge-outlined"
                       >Label</span
                     >
-                    <span class="ne-badge ne-badge-black ne-badge-outline"
+                  </div>
+                  <div style="display: flex; gap: 16px">
+                    <span class="ne-badge ne-badge-sm ne-badge-primary"
+                      >Label</span
+                    >
+                    <span class="ne-badge ne-badge-sm ne-badge-secondary"
+                      >Label</span
+                    >
+                    <div class="root-ma">
+                      <span class="ne-badge ne-badge-sm ne-badge-secondary"
+                        >Label</span
+                      >
+                    </div>
+                    <span class="ne-badge ne-badge-sm ne-badge-black"
+                      >Label</span
+                    >
+                  </div>
+                  <div style="display: flex; gap: 16px">
+                    <span
+                      class="ne-badge ne-badge-sm ne-badge-primary ne-badge-sub"
+                      >Label</span
+                    >
+                    <span
+                      class="ne-badge ne-badge-sm ne-badge-secondary ne-badge-sub"
+                      >Label</span
+                    >
+                    <div class="root-ma">
+                      <span
+                        class="ne-badge ne-badge-sm ne-badge-secondary ne-badge-sub"
+                        >Label</span
+                      >
+                    </div>
+                    <span
+                      class="ne-badge ne-badge-sm ne-badge-black ne-badge-sub"
+                      >Label</span
+                    >
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <h3>Medium</h3>
+                  <div style="display: flex; gap: 16px">
+                    <span class="ne-badge ne-badge-primary ne-badge-outlined"
+                      >Label</span
+                    >
+                    <span class="ne-badge ne-badge-secondary ne-badge-outlined"
+                      >Label</span
+                    >
+                    <div class="root-ma">
+                      <span
+                        class="ne-badge ne-badge-secondary ne-badge-outlined"
+                        >Label</span
+                      >
+                    </div>
+                    <span class="ne-badge ne-badge-black ne-badge-outlined"
                       >Label</span
                     >
                   </div>
                   <div style="display: flex; gap: 16px">
                     <span class="ne-badge ne-badge-primary">Label</span>
-                    <div class="ne-math">
+                    <span class="ne-badge ne-badge-secondary">Label</span>
+                    <div class="root-ma">
                       <span class="ne-badge ne-badge-secondary">Label</span>
                     </div>
-                    <span class="ne-badge ne-badge-secondary">Label</span>
                     <span class="ne-badge ne-badge-black">Label</span>
                   </div>
                   <div style="display: flex; gap: 16px">
-                    <span class="ne-badge ne-badge-primary ne-badge-disabled"
+                    <span class="ne-badge ne-badge-primary ne-badge-sub"
                       >Label</span
                     >
-                    <div class="ne-math">
-                      <span
-                        class="ne-badge ne-badge-secondary ne-badge-disabled"
+                    <span class="ne-badge ne-badge-secondary ne-badge-sub"
+                      >Label</span
+                    >
+                    <div class="root-ma">
+                      <span class="ne-badge ne-badge-secondary ne-badge-sub"
                         >Label</span
                       >
                     </div>
-                    <span class="ne-badge ne-badge-secondary ne-badge-disabled"
+                    <span class="ne-badge ne-badge-black ne-badge-sub"
                       >Label</span
                     >
-                    <span class="ne-badge ne-badge-black ne-badge-disabled"
-                      >Label</span
-                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ne-guide-item">
+              <div class="ne-guide-item-title">No Data</div>
+              <div class="ne-guide-item-contents">
+                <div class="ne-none" style="padding: 0">
+                  <p>저장된 마이북이 없습니다.</p>
+                </div>
+              </div>
+            </div>
+            <div class="ne-guide-item">
+              <div class="ne-guide-item-title">Bullet</div>
+              <div
+                class="ne-guide-item-contents"
+                style="flex-direction: column; gap: 80px"
+              >
+                <div class="ne-guide-item-contents-state">
+                  <h3>16pt</h3>
+                  <div class="ne-textlist">
+                    <strong>안내사항</strong>
+                    <ul>
+                      <li>마이북은 최대 20개까지 등록하실 수 있습니다.</li>
+                      <li>마이북은 최대 20개까지 등록하실 수 있습니다.</li>
+                      <li>마이북은 최대 20개까지 등록하실 수 있습니다.</li>
+                      <li>마이북은 최대 20개까지 등록하실 수 있습니다.</li>
+                      <li>마이북은 최대 20개까지 등록하실 수 있습니다.</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -75,7 +188,7 @@
       </main>
 
       <!-- footer -->
-      <div include-html="/inc/layout/footer.html"></div>
+      <div include-html="../inc/layout/footer.html"></div>
       <!-- //footer -->
     </div>
   </body>
