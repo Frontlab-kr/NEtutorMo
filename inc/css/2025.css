@@ -555,6 +555,18 @@
   line-height: 150%; /* 22.5px */
   letter-spacing: -0.6px;
 }
+.ne-tooltip.top-center::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  width: 22px;
+  height: 12px;
+  margin-left: -11px;
+  background: url(../../netutor/renew/pc/icon//etc/tooltip.svg) no-repeat 0% 50%;
+  transform: rotate(180deg);
+}
 .ne-tooltip.top-left::before {
   content: "";
   display: block;
@@ -2828,6 +2840,9 @@ button {
 }
 .ne-detail-channel__button .ne-btn {
   width: 100%;
+}
+.ne-detail-channel-tooltip {
+  transform: translate(-20px, -5px);
 }
 .ne-detail-channel__menu {
   display: flex;

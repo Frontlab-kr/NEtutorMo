@@ -118,6 +118,21 @@ $enable-transitions: true !default;
       line-height: 150%; /* 22.5px */
       letter-spacing: -0.6px;
     }
+    &.top-center {
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        bottom: -12px;
+        width: 22px;
+        height: 12px;
+        margin-left: -11px;
+        background: url(../../netutor/renew/pc/icon//etc/tooltip.svg) no-repeat
+          0% 50%;
+        transform: rotate(180deg);
+      }
+    }
     &.top-left {
       &::before {
         content: '';
