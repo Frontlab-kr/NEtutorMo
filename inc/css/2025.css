@@ -2954,6 +2954,7 @@ button {
      object-fit: cover;
   aspect-ratio: 200/270;
   box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.16);
+  border-radius: 10px;
 }
 .ne-detail-head-thumb__button {
   display: flex;
