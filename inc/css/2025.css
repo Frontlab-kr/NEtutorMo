@@ -3263,8 +3263,7 @@ button {
   visibility: visible;
 }
 .ne-detail-contents .ne-detail-related {
-  padding-left: 0;
-  padding-right: 0;
+  margin: 0 -20px;
 }
 .ne-detail-more {
   display: flex;
@@ -3299,7 +3298,7 @@ button {
 }
 .ne-detail-editor {
   position: relative;
-  padding: 60px 0 40px;
+  padding: 20px 0 40px;
   border-bottom: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
 }
 .ne-detail-editor img {
