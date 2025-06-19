@@ -1512,8 +1512,12 @@ button {
       left: 0;
       right: 0;
       bottom: 0;
-      z-index: 50;
+      z-index: 150;
       width: 100%;
+      .ne-detail-head-info__button {
+        width: 100%;
+        margin: 0;
+      }
       .ne-sns-layer.active {
         top: auto !important;
         left: auto !important;
