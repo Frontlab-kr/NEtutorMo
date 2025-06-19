@@ -984,7 +984,7 @@ $enable-transitions: true !default;
       }
       &:focus,
       &:hover {
-        border: 2px solid var(--Main-Main-Navy, #172e55);
+        border: 1px solid var(--Main-Main-Navy, #172e55);
       }
     }
     button {

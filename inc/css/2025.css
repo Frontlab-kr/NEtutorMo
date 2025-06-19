@@ -1320,7 +1320,7 @@
   font-size: 16px;
 }
 .ne-search input:focus, .ne-search input:hover {
-  border: 2px solid var(--Main-Main-Navy, #172e55);
+  border: 1px solid var(--Main-Main-Navy, #172e55);
 }
 .ne-search button {
   position: absolute;
