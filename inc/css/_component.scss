@@ -748,6 +748,7 @@ $enable-transitions: true !default;
       }
 
       .list {
+        left: -1px;
         min-width: 98px;
         margin: -34px 0 0 0;
         padding: 0;
