@@ -131,10 +131,9 @@
   border-radius: 0 0 16px 16px;
 }
 .ne-select-gray .list {
-  left: 0;
-  width: 100%;
   background: var(--gray-100-ededed, #ededed);
-  border: none;
+  border: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+  border-top: none;
 }
 .ne-select-lg .list {
   border-radius: 0 0 30px 30px;
