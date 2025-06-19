@@ -2464,13 +2464,17 @@ button {
           a {
             display: block;
             overflow: hidden;
+            &:focus,
+            &:focus-within {
+              border: none;
+              outline: none;
+            }
           }
           img {
             width: 100%;
             border-radius: 10px;
           }
-          &.active,
-          &:hover {
+          &.active {
             border: 1px solid var(--Main-Main-Navy, #172e55);
             border-radius: 10px;
           }

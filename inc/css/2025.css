@@ -4484,11 +4484,15 @@ button {
   display: block;
   overflow: hidden;
 }
+.ne-textbook-list-swiper .swiper-slide a:focus, .ne-textbook-list-swiper .swiper-slide a:focus-within {
+  border: none;
+  outline: none;
+}
 .ne-textbook-list-swiper .swiper-slide img {
   width: 100%;
   border-radius: 10px;
 }
-.ne-textbook-list-swiper .swiper-slide.active, .ne-textbook-list-swiper .swiper-slide:hover {
+.ne-textbook-list-swiper .swiper-slide.active {
   border: 1px solid var(--Main-Main-Navy, #172e55);
   border-radius: 10px;
 }
