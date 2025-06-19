@@ -1706,8 +1706,8 @@
   display: flex;
   gap: 8px;
   overflow: auto;
-  margin-right: -20px;
-  padding: 20px 20px 20px 0;
+  margin: 0 -20px;
+  padding: 20px 20px 20px 20px;
 }
 .ne-sort-item a {
   display: flex;
@@ -2562,7 +2562,6 @@ button {
 .ne-contents-head {
   padding: 20px 0 0 0;
   padding: 0;
-  overflow: hidden;
 }
 .ne-contents-head-title {
   display: flex;
