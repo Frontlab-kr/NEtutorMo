@@ -3262,6 +3262,10 @@ button {
   opacity: 1;
   visibility: visible;
 }
+.ne-detail-contents .ne-detail-related {
+  padding-left: 0;
+  padding-right: 0;
+}
 .ne-detail-more {
   display: flex;
   justify-content: center;
