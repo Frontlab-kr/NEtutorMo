@@ -321,6 +321,7 @@ button {
     &-head {
       padding: 20px 0 0 0;
       padding: 0;
+      overflow: hidden;
       &-title {
         display: flex;
         align-items: center;
@@ -372,7 +373,7 @@ button {
       .ne-sort {
         margin-bottom: 30px;
         margin-bottom: 0;
-        padding: 20px;
+        padding: 20px 40px;
       }
       .ne-sort ~ .ne-contents-head-form {
         padding-top: 0;

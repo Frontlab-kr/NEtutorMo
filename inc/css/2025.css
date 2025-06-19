@@ -2562,6 +2562,7 @@ button {
 .ne-contents-head {
   padding: 20px 0 0 0;
   padding: 0;
+  overflow: hidden;
 }
 .ne-contents-head-title {
   display: flex;
@@ -2609,7 +2610,7 @@ button {
 .ne-contents-head .ne-sort {
   margin-bottom: 30px;
   margin-bottom: 0;
-  padding: 20px;
+  padding: 20px 40px;
 }
 .ne-contents-head .ne-sort ~ .ne-contents-head-form {
   padding-top: 0;
