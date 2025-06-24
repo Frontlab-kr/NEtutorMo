@@ -190,9 +190,9 @@
                       <div class="swiper-slide">
                         <a href="">
                           <p>
-                            <i class="ico-40-readingBook1316"></i>
+                            <i class="ico-40-learningBook"></i>
                           </p>
-                          <strong> 런닝북 </strong>
+                          <strong> 러닝북 </strong>
                         </a>
                       </div>
                     </div>
@@ -290,6 +290,47 @@
               <a href="#ne-detail-testbook-recommend"><span>추천 교재</span></a>
             </div>
             <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                const links = document.querySelectorAll('.ne-contents a');
+
+                links.forEach((link) => {
+                  link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href').replace('#', '');
+                    const targetEl = document.getElementById(targetId);
+                    if (!targetEl) return;
+
+                    const headerHeight =
+                      document.querySelector('.ne-header')?.offsetHeight || 0;
+                    const linkHeight =
+                      document.querySelector('.ne-detail-contents-link')
+                        ?.offsetHeight || 0;
+
+                    let offset = headerHeight + linkHeight;
+
+                    // ✅ 이 링크가 속한 .ne-contents 내 첫 번째 <a>인지 확인
+                    const parentContents = this.closest('.ne-contents');
+                    const siblings =
+                      parentContents?.querySelectorAll('a') || [];
+                    const localIndex = Array.from(siblings).indexOf(this);
+
+                    if (localIndex === 0) {
+                      offset += 32;
+                    }
+
+                    const topPos =
+                      targetEl.getBoundingClientRect().top + window.pageYOffset;
+
+                    window.scrollTo({
+                      top: topPos - offset,
+                      behavior: 'smooth',
+                    });
+                  });
+                });
+              });
+            </script>
+            <script>
               $(document).ready(function () {
                 const $menuLinks = $('.ne-detail-contents-link .ne-contents a');
                 const sections = [];
@@ -358,9 +399,13 @@
                     <li>
                       <p>
                         <i class="ico-28-pdf"></i>
-                        <span>L1_정답 및 해설</span>
                         <span
-                          class="ne-badge ne-badge-sm ne-badge-primary ne-badge-rounded ms-1"
+                          >L1_정답 및 해설L1_정답 및 해설L1_정답 및 해설L1_정답
+                          및 해설L1_정답 및 해설L1_정답 및 해설L1_정답 및
+                          해설L1_정답 및 해설L1_정답 및 해설</span
+                        >
+                        <span
+                          class="ne-badge ne-badge-primary ne-badge-rounded ms-1"
                           >NEW</span
                         >
                       </p>
@@ -371,7 +416,9 @@
                     <li>
                       <p>
                         <i class="ico-28-hwp"></i>
-                        <span>L1_어휘테스트.pdf</span>
+                        <span
+                          >L1_어휘테스트.pdfL1_어휘테스트.pdfL1_어휘테스트.pdfL1_어휘테스트.pdfL1_어휘테스트.pdfL1_어휘테스트.pdfL1_어휘테스트.pdfL1_어휘테스트.pdfL1_어휘테스트.pdfL1_어휘테스트.pdfL1_어휘테스트.pdfL1_어휘테스트.pdfL1_어휘테스트.pdfL1_어휘테스트.pdfL1_어휘테스트.pdfL1_어휘테스트.pdfL1_어휘테스트.pdfL1_어휘테스트.pdfL1_어휘테스트.pdfL1_어휘테스트.pdf</span
+                        >
                       </p>
                       <button class="ne-btn ne-btn-icononly">
                         <i class="ico-20-download"></i>

@@ -598,7 +598,7 @@ $enable-transitions: true !default;
       }
     }
     &-sm {
-      height: 28px;
+      height: 26px;
       font-size: 13px;
     }
     &-rounded {
@@ -1502,6 +1502,7 @@ $enable-transitions: true !default;
   }
   &-board-list {
     &-item {
+      display: block;
       position: relative;
       padding: 20px 68px 20px 20px;
       border-bottom: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
@@ -1566,6 +1567,19 @@ $enable-transitions: true !default;
               display: none;
             }
           }
+        }
+      }
+    }
+    &--download & {
+      &-item {
+        &:after {
+          display: none;
+        }
+        .ne-btn {
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          margin-top: 5px;
         }
       }
     }

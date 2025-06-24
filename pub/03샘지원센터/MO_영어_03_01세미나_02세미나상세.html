@@ -28,7 +28,7 @@
         }
       </style>
       <main id="content" data-pate-title="NE 세미나">
-        <div class="ne-detail">
+        <div class="ne-detail ne-detail-semina">
           <div class="ne-contents">
             <div class="ne-detail-head">
               <div class="ne-detail-head-thumb">
@@ -39,8 +39,8 @@
                   <span class="ne-badge ne-badge-secondary">모집중</span>
                 </div>
                 <div class="ne-detail-head-info__tag">
-                  <a href="">#학원운영</a>
-                  <a href="">#오프라인</a>
+                  <span>#학원운영</span>
+                  <span>#오프라인</span>
                 </div>
                 <div class="ne-detail-head-info__title">
                   <p>1인 원장 성공학원 세미나</p>
@@ -90,9 +90,54 @@
 
             <div class="ne-detail-contents-link">
               <div class="ne-contents">
-                <a href="#ne-detail-editor" class="active">상세내용</a>
+                <a href="#ne-detail-editor" class="active">상세 내용</a>
                 <a href="#ne-detail-related">관련 교재 / 서비스</a>
               </div>
+              <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                  const links = document.querySelectorAll('.ne-contents a');
+
+                  links.forEach((link) => {
+                    link.addEventListener('click', function (e) {
+                      e.preventDefault();
+
+                      const targetId = this.getAttribute('href').replace(
+                        '#',
+                        ''
+                      );
+                      const targetEl = document.getElementById(targetId);
+                      if (!targetEl) return;
+
+                      const headerHeight =
+                        document.querySelector('.ne-header')?.offsetHeight || 0;
+                      const linkHeight =
+                        document.querySelector('.ne-detail-contents-link')
+                          ?.offsetHeight || 0;
+
+                      let offset = headerHeight + linkHeight;
+
+                      // ✅ 이 링크가 속한 .ne-contents 내 첫 번째 <a>인지 확인
+                      const parentContents = this.closest('.ne-contents');
+                      const siblings =
+                        parentContents?.querySelectorAll('a') || [];
+                      const localIndex = Array.from(siblings).indexOf(this);
+
+                      if (localIndex === 0) {
+                        offset += 32;
+                      }
+
+                      const topPos =
+                        targetEl.getBoundingClientRect().top +
+                        window.pageYOffset;
+
+                      window.scrollTo({
+                        top: topPos - offset,
+                        behavior: 'smooth',
+                      });
+                    });
+                  });
+                });
+              </script>
               <script>
                 $(document).ready(function () {
                   const $menuLinks = $(
