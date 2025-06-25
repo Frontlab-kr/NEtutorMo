@@ -885,8 +885,11 @@ $enable-transitions: true !default;
     }
     &-lg {
       input {
-        height: 60px;
+        height: 56px;
         font-size: 16px;
+        &::placeholder {
+          font-size: 16px;
+        }
       }
     }
     &-sm {
@@ -1075,7 +1078,7 @@ $enable-transitions: true !default;
       height: 48px;
       padding: 0 20px;
       border-radius: 30px;
-      border: 2px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+      border: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
       background: var(--Gray-White, #fff);
       box-sizing: border-box;
       color: var(--gray-800191919, var(--gray-800191919, #191919));
@@ -1089,7 +1092,7 @@ $enable-transitions: true !default;
       letter-spacing: -0.6px;
       transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
       &::placeholder {
-        color: var(--gray-400-afafaf, var(--gray-400-afafaf, #afafaf));
+        color: var(--gray-500969696, var(--gray-500969696, #969696));
       }
       &:focus,
       &:hover {
@@ -1100,10 +1103,10 @@ $enable-transitions: true !default;
       position: absolute;
       z-index: 20;
       top: 50%;
-      right: 20px;
-      width: 24px;
-      height: 24px;
-      background: url(../../netutor/renew/pc/icon/24/eye.svg) no-repeat 50% 50%;
+      right: 16px;
+      width: 16px;
+      height: 16px;
+      background: url(../../netutor/renew/mo/icon/16/eye.svg) no-repeat 50% 50%;
       border: 0;
       font-size: 0;
       transform: translateY(-50%);
@@ -1116,13 +1119,11 @@ $enable-transitions: true !default;
     }
     &-lg {
       input {
-        height: 60px;
-        padding: 0 24px;
-        font-size: var(--Font-size-body-large, 18px);
-      }
-      button {
-        width: 40px;
-        height: 40px;
+        height: 56px;
+        font-size: 16px;
+        &::placeholder {
+          font-size: 16px;
+        }
       }
     }
   }
@@ -1994,6 +1995,15 @@ $enable-transitions: true !default;
       margin: 0 auto;
       display: flex;
       align-items: center;
+      &:not(.ne-modal-alert) {
+        .ne-modal-footer {
+          .ne-btn {
+            width: 100%;
+            height: 60px;
+            border-radius: 0;
+          }
+        }
+      }
     }
     &-content {
       position: relative;
@@ -2038,17 +2048,22 @@ $enable-transitions: true !default;
       height: calc(100vh - 112px);
       padding: 20px;
       overflow-y: auto;
+      color: var(--gray-800191919, #191919);
+
+      /* MO/Body/Regular/Large */
+
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 24px */
+      letter-spacing: -0.6px;
     }
     &-footer {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      .ne-btn {
-        width: 100%;
-        height: 60px;
-        border-radius: 0;
-      }
+      margin-top: 10px;
     }
     &-backdrop {
       position: fixed;

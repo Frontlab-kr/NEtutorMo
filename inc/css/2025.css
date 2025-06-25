@@ -34,6 +34,14 @@
   font-size: 0;
 }
 
+.ico-20-link-navy {
+  display: inline-block;
+  min-width: 20px;
+  height: 20px;
+  background: url(../../netutor/renew/mo/icon/20/link-navy.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
 .ico-20-new {
   display: inline-block;
   min-width: 20px;
@@ -487,6 +495,38 @@
   min-width: 40px;
   height: 40px;
   background: url(../../netutor/renew/mo/icon/40/learningBook.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
+.ico-40-Google {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/mo/icon/40/Google.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
+.ico-40-Naver {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/mo/icon/40/Naver.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
+.ico-40-KakaoTalk {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/mo/icon/40/KakaoTalk.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
+.ico-40-Apple {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/mo/icon/40/Apple.svg) no-repeat 50% 50%;
   font-size: 0;
 }
 
@@ -1254,7 +1294,13 @@
   visibility: visible;
 }
 .ne-input-lg input {
-  height: 60px;
+  height: 56px;
+  font-size: 16px;
+}
+.ne-input-lg input::-moz-placeholder {
+  font-size: 16px;
+}
+.ne-input-lg input::placeholder {
   font-size: 16px;
 }
 .ne-input-sm input {
@@ -1413,7 +1459,7 @@
   height: 48px;
   padding: 0 20px;
   border-radius: 30px;
-  border: 2px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+  border: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
   background: var(--Gray-White, #fff);
   box-sizing: border-box;
   color: var(--gray-800191919, var(--gray-800191919, #191919));
@@ -1426,10 +1472,10 @@
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .ne-password input::-moz-placeholder {
-  color: var(--gray-400-afafaf, var(--gray-400-afafaf, #afafaf));
+  color: var(--gray-500969696, var(--gray-500969696, #969696));
 }
 .ne-password input::placeholder {
-  color: var(--gray-400-afafaf, var(--gray-400-afafaf, #afafaf));
+  color: var(--gray-500969696, var(--gray-500969696, #969696));
 }
 .ne-password input:focus, .ne-password input:hover {
   border: 2px solid var(--Main-Main-Navy, #172e55);
@@ -1438,10 +1484,10 @@
   position: absolute;
   z-index: 20;
   top: 50%;
-  right: 20px;
-  width: 24px;
-  height: 24px;
-  background: url(../../netutor/renew/pc/icon/24/eye.svg) no-repeat 50% 50%;
+  right: 16px;
+  width: 16px;
+  height: 16px;
+  background: url(../../netutor/renew/mo/icon/16/eye.svg) no-repeat 50% 50%;
   border: 0;
   font-size: 0;
   transform: translateY(-50%);
@@ -1450,13 +1496,14 @@
   background: url(../../netutor/renew/pc/icon/24/eye-none.svg) no-repeat 50% 50%;
 }
 .ne-password-lg input {
-  height: 60px;
-  padding: 0 24px;
-  font-size: var(--Font-size-body-large, 18px);
+  height: 56px;
+  font-size: 16px;
 }
-.ne-password-lg button {
-  width: 40px;
-  height: 40px;
+.ne-password-lg input::-moz-placeholder {
+  font-size: 16px;
+}
+.ne-password-lg input::placeholder {
+  font-size: 16px;
 }
 .ne-choice {
   display: flex;
@@ -2203,6 +2250,11 @@
   display: flex;
   align-items: center;
 }
+.ne-modal-dialog:not(.ne-modal-alert) .ne-modal-footer .ne-btn {
+  width: 100%;
+  height: 60px;
+  border-radius: 0;
+}
 .ne-modal-content {
   position: relative;
   display: flex;
@@ -2243,17 +2295,20 @@
   height: calc(100vh - 112px);
   padding: 20px;
   overflow-y: auto;
+  color: var(--gray-800191919, #191919);
+  /* MO/Body/Regular/Large */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.6px;
 }
 .ne-modal-footer {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-}
-.ne-modal-footer .ne-btn {
-  width: 100%;
-  height: 60px;
-  border-radius: 0;
+  margin-top: 10px;
 }
 .ne-modal-backdrop {
   position: fixed;
@@ -4147,6 +4202,104 @@ button {
 .ne-write-foot .ne-btn {
   border-radius: 0;
 }
+.ne-login-head {
+  margin-bottom: 30px;
+  padding: 30px 20px;
+  background: var(--gray-50-f-3-f-3-f-3, #f3f3f3);
+}
+.ne-login-head h1 {
+  margin-bottom: 16px;
+  color: var(--Gray-Black, var(--Gray-Black, #000));
+  text-align: center;
+  /* MO/Display/Bold/Xxsmall */
+  font-family: var(--Font-Family-Paperlogy, Paperlogy);
+  font-size: var(--Font-size-heading-medium, 24px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 33.6px */
+  letter-spacing: -0.6px;
+}
+.ne-login-head p {
+  color: var(--gray-6004-b-4-b-4-b, var(--gray-6004-b-4-b-4-b, #4b4b4b));
+  text-align: center;
+  /* MO/Body/Regular/Medium */
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  letter-spacing: -0.6px;
+}
+.ne-login-head p strong {
+  color: var(--Main-Main-Navy, var(--Main-Main-Navy, #172e55));
+  font-weight: 500;
+}
+.ne-login-form {
+  padding: 0 16px;
+}
+.ne-login-form .ne-input {
+  margin-bottom: 10px;
+}
+.ne-login-form .ne-checkbox {
+  margin-top: 10px;
+}
+.ne-login-form .ne-btn {
+  margin-top: 30px;
+}
+.ne-login-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  text-align: center;
+}
+.ne-login-menu a {
+  color: var(--gray-6004-b-4-b-4-b, var(--gray-6004-b-4-b-4-b, #4b4b4b));
+  /* MO/Body/Regular/Medium */
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  letter-spacing: -0.6px;
+}
+.ne-login-menu hr {
+  position: relative;
+  top: auto;
+  left: auto;
+  width: 1px;
+  min-width: 1px;
+  height: 9px;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+  opacity: 1;
+}
+.ne-login-foot {
+  padding: 0 16px;
+}
+.ne-login-sns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+.ne-login-button {
+  margin-top: 40px;
+  text-align: center;
+}
+.ne-login-button p {
+  margin-bottom: 20px;
+  color: var(--gray-6004-b-4-b-4-b, var(--gray-6004-b-4-b-4-b, #4b4b4b));
+  /* MO/Body/Regular/Medium */
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  letter-spacing: -0.6px;
+}
 .ne-semina-list-section {
   padding: 0 20px;
 }
@@ -5741,4 +5894,41 @@ button {
 .ne-modal-body .ne-nelt-student-class {
   height: 80px;
   padding: 20px 40px;
+}
+.ne-modal-alert {
+  width: 320px;
+}
+.ne-modal-alert .ne-modal-header {
+  margin-bottom: 8px;
+  padding: 0;
+  border: none;
+}
+.ne-modal-alert .ne-modal-title {
+  color: var(--gray-800191919, var(--gray-800191919, #191919));
+  /* PC/Display/Heading/Xsmall */
+  font-size: var(--Font-size-heading-xsmall, 18px);
+  font-style: normal;
+  font-weight: 800;
+  line-height: 150%; /* 27px */
+  letter-spacing: -0.6px;
+}
+.ne-modal-alert .ne-modal-content {
+  height: auto;
+  padding: 24px;
+  border-radius: 18px;
+}
+.ne-modal-alert .ne-modal-body {
+  height: auto;
+  margin: 0;
+  padding: 0 0 12px 0;
+  color: var(--gray-700323232, var(--gray-700323232, #323232));
+  /* PC/Body/Regular/Medium */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.6px;
+}
+.ne-modal-alert .ne-modal-footer .ne-btn {
+  max-width: 134px;
 }/*# sourceMappingURL=2025.css.map */
