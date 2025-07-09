@@ -59,45 +59,61 @@ $(document).ready(function () {
           .html('<span class="current"></span><ul class="list"></ul>')
       );
 
-      var $dropdown = $select.next();
-      var $options = $select.find('option');
+      const $dropdown = $select.next();
+      const $options = $select.find('option');
+      const selectedVal = $select.val(); // 현재 값
+      const $selectedOption = $select.find(`option[value="${selectedVal}"]`);
+      const hasSelectedAttr = $select.find('option[selected]').length > 0;
+      const placeholder = $select.attr('data-placeholder');
+      const $current = $dropdown.find('.current');
+      let currentText = '';
+      let isPlaceholder = false;
 
-      var $selectedOption = $select.find('option:selected');
-      var selectValue = $selectedOption.val();
-      var placeholder =
-        $select.data('placeholder') || $select.attr('data-placeholder');
+      // ✅ placeholder 우선: selected 명시 없으면 placeholder 표시
+      if (!hasSelectedAttr && placeholder) {
+        currentText = placeholder;
+        isPlaceholder = true;
+      } else if ($selectedOption.length > 0) {
+        currentText = $selectedOption.data('display') || $selectedOption.text();
+        isPlaceholder = false;
+      } else {
+        const $firstOption = $options.first();
+        currentText = $firstOption.data('display') || $firstOption.text();
+        isPlaceholder = false;
+      }
 
-      var isPlaceholder = typeof placeholder !== 'undefined';
-
-      var $matchedOption = $options.filter('[value="' + selectValue + '"]');
-
-      var currentText = isPlaceholder
-        ? placeholder || '&nbsp;'
-        : $selectedOption.data('display') || $selectedOption.text();
-
-      var $current = $dropdown.find('.current');
       $current.text(currentText);
       $current.toggleClass('placeholder', isPlaceholder);
 
-      $options.each(function (i) {
-        var $option = $(this);
-        var display = $option.data('display');
-
-        var isSelected =
-          !isPlaceholder && $option.val() === selectValue ? ' selected' : '';
+      // 옵션 리스트 생성
+      $options.each(function () {
+        const $option = $(this);
+        const value = $option.val();
+        const display = $option.data('display');
+        const isSelected = value === selectedVal;
 
         $dropdown.find('ul').append(
           $('<li></li>')
-            .attr('data-value', $option.val())
+            .attr('data-value', value)
             .attr('data-display', display || null)
             .addClass(
               'option' +
-                isSelected +
+                (isSelected ? ' selected focus' : '') +
                 ($option.is(':disabled') ? ' disabled' : '')
             )
             .append($('<p></p>').text($option.text()))
         );
       });
+
+      const $selected = $dropdown.find('.option.selected');
+      if ($selected.length) {
+        setTimeout(() => {
+          $selected[0].scrollIntoView({
+            block: 'nearest',
+            behavior: 'smooth',
+          });
+        }, 0);
+      }
     }
 
     /* Event listeners */

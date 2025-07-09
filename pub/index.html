@@ -242,7 +242,7 @@
             '.url [data-progress="진행"]'
           ).length,
           iaEnd = document.querySelectorAll(
-            '.url [data-progress="검수"]'
+            '.url [data-progress="완료"]'
           ).length,
           iaSend = document.querySelectorAll(
             '.url [data-progress="완료"]'
@@ -296,10 +296,10 @@
 
         // 진행상태 class
         if (
-          document.querySelectorAll('.url [data-progress="검수"]').length > 0
+          document.querySelectorAll('.url [data-progress="완료"]').length > 0
         ) {
           document
-            .querySelectorAll('.url [data-progress="검수"]')
+            .querySelectorAll('.url [data-progress="완료"]')
             .forEach(function (el) {
               el.parentElement.classList.add('end');
             });
@@ -414,8 +414,8 @@
           <button typ="button" class="btn small ing" onclick="filter('진행')">
             진행: <em></em> 건
           </button>
-          <button typ="button" class="btn small end" onclick="filter('검수')">
-            검수: <em></em> 건
+          <button typ="button" class="btn small end" onclick="filter('완료')">
+            완료: <em></em> 건
           </button>
           <button typ="button" class="btn small send" onclick="filter('완료')">
             완료: <em></em> 건
@@ -510,7 +510,7 @@
               <td class="col-url">
                 ../pub/00로그인/MO_@공통_01로그인_01선생님.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -521,7 +521,7 @@
               <td class="col-url">
                 ../pub/00로그인/MO_@공통_01로그인_02학생.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -533,7 +533,7 @@
               <td class="col-1depth">01교재/E-BOOK</td>
               <td class="col-2depth"></td>
               <td class="col-url">../pub/01교재EBOOK/MO_01교재_01LIst.html</td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -544,7 +544,7 @@
               <td class="col-url">
                 ../pub/01교재EBOOK/MO_01교재_01Ebook_List.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -553,7 +553,7 @@
               <td class="col-1depth">01교재/E-BOOK</td>
               <td class="col-2depth"></td>
               <td class="col-url">../pub/01교재EBOOK/MO_01교재_02상세.html</td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -564,7 +564,7 @@
               <td class="col-url">
                 ../pub/01교재EBOOK/MO_01교재_01LIst_Nodata.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -578,7 +578,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_영어_03_01세미나_01List.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -589,7 +589,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_영어_03_01세미나_02세미나상세.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -600,7 +600,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_영어_03_01세미나_03세미나신청_01배송주소노출.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -611,7 +611,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_영어_03_01세미나_03세미나신청_02배송주소미노출.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -622,7 +622,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_영어_03_01세미나_04Nodata.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -634,7 +634,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_영어_03_02이벤트_01List.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -645,7 +645,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_영어_03_02이벤트_02상세.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -656,7 +656,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_영어_03_02이벤트_04Nodata.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -667,7 +667,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_영어_03_03새소식_01List.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -678,7 +678,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_영어_03_03새소식_02상세.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -689,7 +689,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_영어_03_03새소식_04Nodata.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -700,7 +700,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_영어_03_04학원수업정보_01목록.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -711,7 +711,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_영어_03_04학원수업정보_02목록상세.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -722,7 +722,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_영어_03_04학원수업정보_04Nodata.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -733,7 +733,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_수학_03_01세미나_01List.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -744,7 +744,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_수학_03_01세미나_02세미나상세.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -755,7 +755,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_수학_03_01세미나_03세미나신청_01배송주소노출.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -766,7 +766,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_수학_03_01세미나_03세미나신청_02배송주소미노출.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -777,7 +777,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_수학_03_01세미나_04Nodata.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -788,7 +788,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_수학_03_02이벤트_01List.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -799,7 +799,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_수학_03_02이벤트_02상세.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -810,7 +810,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_수학_03_02이벤트_04Nodata.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -821,7 +821,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_수학_03_03새소식_01List.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -832,7 +832,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_수학_03_03새소식_02상세.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -843,7 +843,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_수학_03_03새소식_04Nodata.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250606</td>
               <td class="col-modidate"></td>
             </tr>
@@ -854,7 +854,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_수학_03_04학원수업정보_01목록.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -865,7 +865,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_수학_03_04학원수업정보_02목록상세.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -876,7 +876,7 @@
               <td class="col-url">
                 ../pub/03샘지원센터/MO_수학_03_04학원수업정보_04Nodata.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -890,7 +890,7 @@
               <td class="col-url">
                 ../pub/04스마트클래스/MO_04_01_01반관리_01list.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -901,7 +901,7 @@
               <td class="col-url">
                 ../pub/04스마트클래스/MO_04_01_01반관리_02반수정.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -912,7 +912,7 @@
               <td class="col-url">
                 ../pub/04스마트클래스/MO_04_01_01반관리_03반신규등록.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -923,7 +923,7 @@
               <td class="col-url">
                 ../pub/04스마트클래스/MO_04_01_02학생관리_01list.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -934,7 +934,7 @@
               <td class="col-url">
                 ../pub/04스마트클래스/MO_04_01_02학생관리_01list_검색결과없음.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -945,7 +945,7 @@
               <td class="col-url">
                 ../pub/04스마트클래스/MO_04_01_02학생관리_01학생정보.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -956,7 +956,7 @@
               <td class="col-url">
                 ../pub/04스마트클래스/MO_04_01_03클래스홈.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -967,7 +967,7 @@
               <td class="col-url">
                 ../pub/04스마트클래스/MO_04_01_04나의학습방.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -978,7 +978,7 @@
               <td class="col-url">
                 ../pub/04스마트클래스/MO_04_01_05클래스카드_어휘학습.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -989,7 +989,7 @@
               <td class="col-url">
                 ../pub/04스마트클래스/MO_04_01_06알림장_01List_01전체.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1000,7 +1000,7 @@
               <td class="col-url">
                 ../pub/04스마트클래스/MO_04_01_06알림장_01List_02반.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1011,7 +1011,7 @@
               <td class="col-url">
                 ../pub/04스마트클래스/MO_04_01_06알림장_01List_03게시물없음.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1022,7 +1022,7 @@
               <td class="col-url">
                 ../pub/04스마트클래스/MO_04_01_06_02수정.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1033,7 +1033,7 @@
               <td class="col-url">
                 ../pub/04스마트클래스/MO_04_01_06_02등록.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr> -->
@@ -1045,7 +1045,7 @@
               <td class="col-1depth">05NELT</td>
               <td class="col-2depth"></td>
               <td class="col-url">../pub/05NELT/MO_05_02소식_01List.html</td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1054,7 +1054,7 @@
               <td class="col-1depth">05NELT</td>
               <td class="col-2depth"></td>
               <td class="col-url">../pub/05NELT/MO_05_02소식_02상세.html</td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1063,7 +1063,7 @@
               <td class="col-1depth">05NELT</td>
               <td class="col-2depth"></td>
               <td class="col-url">../pub/05NELT/MO_05_02소식_03Nodata.html</td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1074,7 +1074,7 @@
               <td class="col-url">
                 ../pub/05NELT/MO_05_03자료실_01참고자료_01List.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1085,7 +1085,7 @@
               <td class="col-url">
                 ../pub/05NELT/MO_05_03자료실_01참고자료_02상세.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1096,7 +1096,7 @@
               <td class="col-url">
                 ../pub/05NELT/MO_05_03자료실_01참고자료_03Nodata.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1108,7 +1108,7 @@
               <td class="col-url">
                 ../pub/05NELT/MO_05_03자료실_02성적해석_상담활용팁영상_01List.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1119,7 +1119,7 @@
               <td class="col-url">
                 ../pub/05NELT/MO_05_03자료실_02성적해석_상담활용팁영상_02Nodata.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1130,7 +1130,7 @@
               <td class="col-url">
                 ../pub/05NELT/MO_05_04학부모상담매뉴얼_01List.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1141,7 +1141,7 @@
               <td class="col-url">
                 ../pub/05NELT/MO_05_04학부모상담매뉴얼_02상세.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1152,7 +1152,7 @@
               <td class="col-url">
                 ../pub/05NELT/MO_05_04학부모상담매뉴얼_03Nodata.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1163,7 +1163,7 @@
               <td class="col-url">
                 ../pub/05NELT/MO_05_06학원활용후기_01List.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1174,7 +1174,7 @@
               <td class="col-url">
                 ../pub/05NELT/MO_05_06학원활용후기_02상세.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1185,7 +1185,7 @@
               <td class="col-url">
                 ../pub/05NELT/MO_05_06학원활용후기_03Nodata.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250626</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1199,7 +1199,7 @@
               <td class="col-url">
                 ../pub/06고객센터/MO_06_01자주묻는질문_01목록.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1210,7 +1210,7 @@
               <td class="col-url">
                 ../pub/06고객센터/MO_06_01자주묻는질문_01목록_nodata.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1221,7 +1221,7 @@
               <td class="col-url">
                 ../pub/06고객센터/MO_06_02공지사항_01List.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1232,7 +1232,7 @@
               <td class="col-url">
                 ../pub/06고객센터/MO_06_02공지사항_01List_nodata.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1243,7 +1243,7 @@
               <td class="col-url">
                 ../pub/06고객센터/MO_06_02공지사항_02상세.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1254,7 +1254,18 @@
               <td class="col-url">
                 ../pub/06고객센터/MO_06_02공지사항_03교재PDF신청_01.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250613</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">06고객센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                ../pub/06고객센터/MO_06_02공지사항_03교재PDF신청_05교재다운로드.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1265,7 +1276,7 @@
               <td class="col-url">
                 ../pub/06고객센터/MO_06_03문의_01List.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1276,7 +1287,7 @@
               <td class="col-url">
                 ../pub/06고객센터/MO_06_03문의_01List_nodata.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1287,7 +1298,7 @@
               <td class="col-url">
                 ../pub/06고객센터/MO_06_03문의_02상세.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1298,7 +1309,7 @@
               <td class="col-url">
                 ../pub/06고객센터/MO_06_03문의_03문의하기.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1309,7 +1320,7 @@
               <td class="col-url">
                 ../pub/06고객센터/MO_06_04교재오류정정_01교재오류정정_01List.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1320,7 +1331,7 @@
               <td class="col-url">
                 ../pub/06고객센터/MO_06_04교재오류정정_01교재오류정정_01List_nodata.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1331,7 +1342,7 @@
               <td class="col-url">
                 ../pub/06고객센터/MO_06_04교재오류정정_01교재오류정정_02상세.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1342,7 +1353,7 @@
               <td class="col-url">
                 ../pub/06고객센터/MO_06_04교재오류정정_01교재오류정정_03신고하기.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1353,7 +1364,7 @@
               <td class="col-url">
                 ../pub/06고객센터/MO_06_04교재오류정정_02교재오류신고내역_01List.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>
@@ -1364,7 +1375,7 @@
               <td class="col-url">
                 ../pub/06고객센터/MO_06_04교재오류정정_02교재오류신고내역_02상세.html
               </td>
-              <td class="col-progress" data-progress="검수"></td>
+              <td class="col-progress" data-progress="완료"></td>
               <td class="col-senddate">20250613</td>
               <td class="col-modidate"></td>
             </tr>

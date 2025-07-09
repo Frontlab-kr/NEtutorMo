@@ -3478,6 +3478,26 @@ button {
       }
     }
   }
+  &-channel {
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      li {
+        width: 100%;
+        height: 60px;
+        border-radius: 12px;
+        border: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
   &-search-student {
     padding: 16px 0 0 0;
     &-head {
@@ -3527,6 +3547,46 @@ button {
       margin-top: 30px;
       overflow: auto;
       border: 1px solid #000;
+    }
+  }
+  &-testbook-download {
+    padding: 40px 20px;
+    &__title {
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--gray-100-ededed, #ededed);
+      color: #191919;
+      text-align: center;
+
+      /* MO/Display/Bold/Xxsmall */
+      font-family: var(--Font-Family-Paperlogy, Paperlogy);
+      font-size: var(--Font-size-heading-medium, 24px);
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%; /* 33.6px */
+      letter-spacing: -0.6px;
+    }
+    &__button {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 40px;
+      .ne-btn {
+        width: 100%;
+      }
+    }
+    &__text {
+      padding: 28px 20px;
+      border-bottom: 1px solid var(--gray-100-ededed, #ededed);
+      color: var(--gray-800191919, #191919);
+      text-align: center;
+
+      /* MO/Body/Regular/Medium */
+      font-family: var(--Font-Family-pretendard, pretendard);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 21px */
+      letter-spacing: -0.6px;
     }
   }
   &-nelt {
@@ -3841,11 +3901,18 @@ button {
       &-list {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-wrap: wrap;
         column-gap: 16px;
         row-gap: 30px;
         margin-bottom: 20px;
+        .ne-none {
+          width: 100%;
+          padding: 60px 0;
+        }
         &-item {
           position: relative;
+          width: calc(50% - 8px);
           .ne-checkbox,
           .ne-radio {
             position: absolute;
