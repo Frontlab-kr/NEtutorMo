@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/m_style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://front.neungyule.com/css/swiper.css"
+      type="text/css"
+    />
+
+    <script src="../../inc/js/jquery.js"></script>
+    <script
+      src="https://front.neungyule.com/js/swiper.js"
+      type="text/javascript"
+    ></script>
+
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div
+        include-html="../../inc/layout/header.html"
+        style="position: sticky; top: 0; z-index: 100"
+      ></div>
+      <!-- //header -->
+
+      <main id="content" data-pate-title="주문 결제">
+        <div class="ne-contents">
+          <div class="ne-payment">
+            <div class="ne-payment-complete">
+              <div class="ne-payment-complete__title">
+                <i class="ico-smile-success"></i>
+                <h1>
+                  주문이 정상적으로<br />
+                  <strong>완료되었습니다.</strong>
+                </h1>
+              </div>
+              <div class="ne-payment-complete-info">
+                <div class="ne-payment-complete-info__title">
+                  <h5>주문 완료 상품</h5>
+                </div>
+                <div class="ne-payment-complete-info__contents">
+                  <dl>
+                    <dt>
+                      <strong>격간지</strong>
+                      <p>
+                        (학생용) 격간지 새싹 워크북 상권 (1건) | (학생용) 격간지
+                        새싹 워크북 하권 (1권) + 배송비 (4,000원)
+                      </p>
+                    </dt>
+                    <dd>
+                      총 결제금액
+                      <h4><strong>22,000</strong>원</h4>
+                    </dd>
+                    <dd class="fs-14 text-danger">
+                      ※ 5만원 미만 구매 시 배송비(4,000원)가 추가됩니다.
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+              <div class="ne-payment-complete-address">
+                <div class="ne-payment-complete-address__title">
+                  <h5>배송지 정보</h5>
+                </div>
+                <div class="ne-payment-complete-address__contents">
+                  <strong>권희성</strong>
+                  <p>
+                    (03925) 서울특별시 마포구 상암동 1605 누리꿈스퀘어 1001호
+                  </p>
+                  <p>010-8913-9629</p>
+                  <p>요청사항 : -</p>
+                </div>
+              </div>
+              <div class="ne-payment-complete__button">
+                <button type="button" class="ne-btn ne-btn-primary ne-btn-lg">
+                  메인
+                </button>
+                <button
+                  type="button"
+                  class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-lg"
+                >
+                  구매내역
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>
