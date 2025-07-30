@@ -236,8 +236,7 @@ $(document).ready(function () {
     return this;
   };
 
-  $('.ne .ne-select').niceSelect();
-  $('.ne-modal .ne-select').niceSelect();
+  $('.ne-select').niceSelect();
 
   //tab
   document.querySelectorAll('.ne-tabs').forEach((tabsContainer) => {
@@ -284,6 +283,21 @@ $(document).ready(function () {
   });
   $(document).on('click', '.ne-input button', function () {
     const $parent = $(this).closest('.ne-input');
+    $(this).siblings('input').val('');
+    $parent.removeClass('has-value');
+  });
+
+  //search
+  $(document).on('input', '.ne-search input', function () {
+    const $parent = $(this).closest('.ne-search');
+    if ($(this).val().trim() !== '') {
+      $parent.addClass('has-value'); // 원하는 클래스
+    } else {
+      $parent.removeClass('has-value');
+    }
+  });
+  $(document).on('click', '.ne-search button', function () {
+    const $parent = $(this).closest('.ne-search');
     $(this).siblings('input').val('');
     $parent.removeClass('has-value');
   });
@@ -642,6 +656,54 @@ $(document).ready(function () {
         yearSuffix: '년',
         showButtonPanel: true,
       });
+    }
+  });
+
+  //header
+  $(document).on('click', '.ne-header-menu-gnb-depth1 ul li > a', function () {
+    // 1. depth1 메뉴에서 active 처리
+    const $clickedLi = $(this).closest('li');
+    $('.ne-header-menu-gnb-depth1 ul li').removeClass('active');
+    $clickedLi.addClass('active');
+
+    // 2. 클릭한 li의 index를 구함
+    const index = $clickedLi.index();
+
+    // 3. 해당 index에 맞는 depth2-item을 활성화
+    $('.ne-header-menu-gnb-depth2-item').removeClass('active');
+    $('.ne-header-menu-gnb-depth2-item').eq(index).addClass('active');
+  });
+
+  $(document).on(
+    'click',
+    '.ne-header-menu-gnb-depth2-item dt > a',
+    function (e) {
+      e.preventDefault(); // 링크 이동 방지
+      const $dl = $(this).closest('dl');
+      $dl.toggleClass('active');
+    }
+  );
+
+  $(document).on('click', '.ne-header-menu-toggle', function () {
+    $('html').toggleClass('html--menu');
+    $('.ne').toggleClass('ne--fullmenu');
+    $('.ne').removeClass('ne--search');
+  });
+
+  $(document).on(
+    'click',
+    '.ne-header-search-toggle, .ne-header-dim',
+    function () {
+      $('html').toggleClass('html--menu');
+      $('.ne').toggleClass('ne--search');
+    }
+  );
+  // ESC 키
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      $('.ne').removeClass('ne--fullmenu');
+      $('.ne').removeClass('ne--search');
+      $('html').removeClass('html--menu');
     }
   });
 });

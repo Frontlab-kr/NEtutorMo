@@ -53,7 +53,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     includeHTML(function () {
       // ✅ 1. 페이지 타이틀 반영
-      const title = $('#content').data('pate-title');
+      const title = $('#content').data('page-title');
       if (title) {
         $('.ne-header h1').text(title);
       }

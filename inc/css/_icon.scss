@@ -65,6 +65,13 @@
     50%;
   font-size: 0;
 }
+.ico-16-error {
+  display: inline-block;
+  min-width: 16px;
+  height: 16px;
+  background: url(../../netutor/renew/mo/icon/16/error.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
 
 //20
 .ico-20-link-navy {
@@ -140,6 +147,13 @@
   height: 24px;
   background: url(../../netutor/renew/mo/icon/24/calendar-black.svg) no-repeat
     50% 50%;
+  font-size: 0;
+}
+.ico-24-search {
+  display: inline-block;
+  min-width: 24px;
+  height: 24px;
+  background: url(../../netutor/renew/mo/icon/24/search.svg) no-repeat 50% 50%;
   font-size: 0;
 }
 
@@ -306,6 +320,15 @@
   min-width: 28px;
   height: 28px;
   background: url(../../netutor/renew/mo/icon/28/zip.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
+//36
+.ico-36-profile {
+  display: inline-block;
+  min-width: 36px;
+  height: 36px;
+  background: url(../../netutor/renew/mo/icon/36/profile.svg) no-repeat 50% 50%;
   font-size: 0;
 }
 
@@ -600,5 +623,12 @@
   min-width: 44px;
   height: 44px;
   background: url(../../netutor/renew/mo/icon/etc/youtube.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+.ico-50-youtube {
+  display: inline-block;
+  min-width: 50px;
+  height: 50px;
+  background: url(../../netutor/renew/mo/icon/50/youtube.svg) no-repeat 50% 50%;
   font-size: 0;
 }

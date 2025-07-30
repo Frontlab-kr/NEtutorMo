@@ -30,7 +30,7 @@
       ></div>
       <!-- //header -->
 
-      <main id="content" data-pate-title="교재/E-BOOK">
+      <main id="content" data-page-title="교재/E-BOOK">
         <div class="ne-detail">
           <div class="ne-contents">
             <div class="ne-detail-head">
@@ -101,7 +101,7 @@
                         <td>200L-400L</td>
                       </tr>
                       <tr>
-                        <th scope="row">상품 금액</th>
+                        <th scope="row">정가</th>
                         <td>
                           <span class="ne-detail-head-info__table-price">
                             <strong>18,000</strong>
@@ -299,7 +299,7 @@
             </div>
             <script>
               document.addEventListener('DOMContentLoaded', function () {
-                const links = document.querySelectorAll('.ne-contents a');
+                const links = document.querySelectorAll('.ne-contents > a');
 
                 links.forEach((link) => {
                   link.addEventListener('click', function (e) {
@@ -340,7 +340,9 @@
             </script>
             <script>
               $(document).ready(function () {
-                const $menuLinks = $('.ne-detail-contents-link .ne-contents a');
+                const $menuLinks = $(
+                  '.ne-detail-contents-link .ne-contents > a'
+                );
                 const sections = [];
 
                 $menuLinks.each(function () {
@@ -417,7 +419,7 @@
                           >NEW</span
                         >
                       </p>
-                      <button class="ne-btn ne-btn-icononly">
+                      <button class="ne-btn ne-btn-icononly ne-btn--disabled">
                         <i class="ico-20-download"></i>
                       </button>
                     </li>

@@ -26,12 +26,12 @@
     <div class="ne">
       <!-- header -->
       <div
-        include-html="../../inc/layout/header.html"
+        include-html="../../inc/layout/header-math.html"
         style="position: sticky; top: 0; z-index: 100"
       ></div>
       <!-- //header -->
 
-      <main id="content" data-pate-title="교재/E-BOOK">
+      <main id="content" data-page-title="교재/E-BOOK">
         <div class="ne-contents">
           <div class="ne-textbook-list-section">
             <div class="ne-textbook-list-contents">
@@ -117,7 +117,7 @@
                 <div class="ne-textbook-list-menu">
                   <div class="ne-textbook-list-menu-start">
                     <div>
-                      <select class="ne-select ne-select-default">
+                      <select class="ne-select ne-select-text">
                         <option selected>최신순</option>
                         <option>조회순</option>
                         <option>가나다순</option>
@@ -200,7 +200,12 @@
                           부가자료 전체 다운로드
                         </button>
                       </p>
-                      <button type="button" class="ne-btn ne-btn-primary">
+                      <button
+                        type="button"
+                        class="ne-btn ne-btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal02"
+                      >
                         구매하기
                       </button>
                     </div>
@@ -270,7 +275,7 @@
                         </button>
                       </p>
                       <button type="button" class="ne-btn ne-btn-primary">
-                        구매하기
+                        지사안내
                       </button>
                     </div>
                   </div>
@@ -338,7 +343,12 @@
                           부가자료 전체 다운로드
                         </button>
                       </p>
-                      <button type="button" class="ne-btn ne-btn-primary">
+                      <button
+                        type="button"
+                        class="ne-btn ne-btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal02"
+                      >
                         구매하기
                       </button>
                     </div>
@@ -504,6 +514,70 @@
             >
               적용하기
             </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ne-modal ne-modal--bottom fade" id="modal02" tabindex="-1">
+      <div class="ne-modal-dialog">
+        <div class="ne-modal-content">
+          <div class="ne-modal-header">
+            <div class="ne-modal-title">판매처</div>
+            <button
+              type="button"
+              class="ne-btn ne-btn-icononly"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ico-28-close"></i>
+            </button>
+          </div>
+          <div class="ne-modal-body">
+            <div class="ne-channel">
+              <ul>
+                <li>
+                  <a href="">
+                    <img
+                      src="../../netutor/renew/mo/channel/yes24.svg"
+                      alt="yes24"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <img
+                      src="../../netutor/renew/mo/channel/kyobo.svg"
+                      alt="교보문고"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <img
+                      src="../../netutor/renew/mo/channel/ne_ci.svg"
+                      alt="NE Build & Grow"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <img
+                      src="../../netutor/renew/mo/channel/aladin.svg"
+                      alt="알라딘"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <img
+                      src="../../netutor/renew/mo/channel/naver.svg"
+                      alt="네이버 스토어"
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

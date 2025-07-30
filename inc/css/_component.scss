@@ -45,6 +45,17 @@ $enable-transitions: true !default;
 }
 
 .ne {
+  &-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    background: url(../../netutor/renew/mo/icon/etc/loading.gif) no-repeat 50%
+      50%;
+    background-size: auto 145.5px;
+    font-size: 0;
+  }
   &-switch {
     position: relative;
     display: inline-block;
@@ -260,6 +271,11 @@ $enable-transitions: true !default;
             url(../../netutor/renew/mo/icon/20/check.svg) no-repeat 50% 50%;
         }
       }
+      &:disabled ~ label {
+        &::before {
+          background-color: #f3f3f3;
+        }
+      }
     }
     label {
       &::before {
@@ -299,6 +315,13 @@ $enable-transitions: true !default;
         letter-spacing: -0.6px;
       }
     }
+    &--disabled {
+      label {
+        &::before {
+          background-color: #f3f3f3;
+        }
+      }
+    }
   }
   &-radio {
     display: inline-flex;
@@ -318,6 +341,11 @@ $enable-transitions: true !default;
         &::after {
           opacity: 1;
           visibility: visible;
+        }
+      }
+      &:disabled ~ label {
+        &::before {
+          background-color: #f3f3f3;
         }
       }
     }
@@ -361,6 +389,13 @@ $enable-transitions: true !default;
       font-weight: 400;
       line-height: 24px; /* 24px */
       letter-spacing: -0.6px;
+    }
+    &--disabled {
+      label {
+        &::before {
+          background-color: #f3f3f3;
+        }
+      }
     }
   }
   a.ne-btn,
@@ -498,6 +533,26 @@ $enable-transitions: true !default;
         color: var(--Gray-White, var(--Gray-White, #fff));
       }
     }
+
+    &-danger {
+      color: var(
+        --system-danger-300-cc-3333,
+        var(--system-danger-300-cc-3333, #c33)
+      );
+      background: #fff;
+      border: 1px solid
+        var(--system-danger-300-cc-3333, var(--system-danger-300-cc-3333, #c33));
+      &:hover,
+      &.hover {
+        background: #fff;
+        border-color: var(--primary-8002-d-4265, #c33);
+      }
+      &:disabled {
+        background: var(--primary-200-b-9-c-0-cb, #b9c0cb);
+        border-color: var(--primary-200-b-9-c-0-cb, #b9c0cb);
+      }
+    }
+
     &-rounded {
       border-radius: 99px;
     }
@@ -530,6 +585,11 @@ $enable-transitions: true !default;
         i {
           opacity: 0.3;
         }
+      }
+    }
+    &--disabled {
+      i {
+        opacity: 0.3;
       }
     }
     &-select {
@@ -756,14 +816,93 @@ $enable-transitions: true !default;
       background: var(--gray-100-ededed, #ededed);
     }
     &-default {
-      min-width: 98px;
-      height: 33px;
-      padding: 6px 8px;
+      height: 34px;
+      justify-content: flex-start;
+      gap: 8px;
+      padding-left: 0;
       border-radius: 0;
       border: 0;
       background: none;
-      color: var(--gray-6004-b-4-b-4-b, var(--gray-6004-b-4-b-4-b, #4b4b4b));
+      color: var(--gray-800191919, var(--gray-800191919, #191919));
 
+      /* MO/Display/Bold/Xxsmall */
+      font-family: var(--Font-Family-Paperlogy, Paperlogy);
+      font-size: var(--Font-size-heading-medium, 24px);
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%; /* 33.6px */
+      letter-spacing: -0.6px;
+      &::after {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 24px;
+        height: 24px;
+        margin: 0;
+        background: url(../../netutor/renew/mo/icon/24/select-lg.svg) no-repeat
+          50% 50%;
+      }
+      &.ne-select-lg {
+        font-size: 45px;
+        .list {
+          min-width: 400px;
+        }
+      }
+      &.ne-select-sm {
+        padding: 0 48px 0 0px;
+        font-size: var(--Font-size-heading-small, 20px);
+        font-style: normal;
+        font-weight: 800;
+        line-height: 150%; /* 30px */
+        letter-spacing: -0.6px;
+        .list {
+          min-width: 240px;
+        }
+        .list .option {
+          margin-top: 10px;
+          font-size: var(--Font-size-heading-small, 20px);
+        }
+      }
+      .list {
+        min-width: 200px;
+        margin-top: 6px;
+        padding: 10px 0px;
+        border-radius: 5px;
+        border: 2px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+        background: var(--Gray-White, #fff);
+
+        /* Shadows-medium */
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.16);
+
+        .option {
+          margin-top: 0;
+          color: var(--gray-500969696, var(--gray-500969696, #969696));
+
+          /* PC/Display/Regular/Xsamll */
+          font-family: var(--Font-Family-Paperlogy, Paperlogy);
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 120%; /* 38.4px */
+          letter-spacing: -0.6px;
+          &:first-child {
+            margin-top: 0;
+          }
+          &:hover,
+          &.focus,
+          &.selected.focus {
+            background: none;
+            color: var(--Main-Main-Navy, var(--Main-Main-Navy, #172e55));
+            font-weight: 700;
+          }
+        }
+      }
+    }
+    &-text {
+      min-width: 98px;
+      height: 33px;
+      padding-left: 8px;
+      border: none;
       /* MO/Body/Regular/Medium */
 
       font-size: 14px;
@@ -773,22 +912,20 @@ $enable-transitions: true !default;
       letter-spacing: -0.6px;
       &::after {
         right: 8px;
-        background: url(../../netutor/renew/mo/icon/16/select.svg) no-repeat 50%
-          50%;
-        z-index: 100;
+        z-index: 20;
       }
-
       .list {
         min-width: 98px;
-        margin: -34px 0 0 0;
-        padding: 0;
+        margin-top: -34px;
+        padding: 0 0px;
         border-radius: 12px;
         border: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+        background: var(--Gray-White, #fff);
         transition: none;
         .option {
           height: 33px;
-          margin: 0;
-          padding: 6px 8px;
+          margin-top: 0;
+          padding: 0 8px;
           color: var(
             --gray-6004-b-4-b-4-b,
             var(--gray-6004-b-4-b-4-b, #4b4b4b)
@@ -869,7 +1006,7 @@ $enable-transitions: true !default;
       //   visibility: visible;
       // }
       &:disabled {
-        border: 2px solid var(--gray-100-ededed, #ededed);
+        border: 1px solid var(--gray-100-ededed, #ededed);
         background: var(--gray-50-f-3-f-3-f-3, #f3f3f3);
         color: var(
           --Dark-Opacities-40,
@@ -1021,7 +1158,7 @@ $enable-transitions: true !default;
         border: 1px solid var(--Main-Main-Navy, #172e55);
       }
     }
-    button {
+    button:not(.ne-search__delete) {
       position: absolute;
       z-index: 20;
       top: 50%;
@@ -1034,6 +1171,29 @@ $enable-transitions: true !default;
       font-size: 0;
       transform: translateY(-50%);
     }
+    &__delete {
+      position: absolute;
+      top: 50%;
+      right: 46px;
+      width: 24px;
+      height: 24px;
+      background: url(../../netutor/renew/mo/icon/16/delete.svg) no-repeat 50%
+        50%;
+      border: 0;
+      font-size: 0;
+      transform: translateY(-50%);
+      z-index: 20;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s ease-in-out;
+    }
+    &.has-value {
+      button {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
     &-lg {
       input {
         height: 60px;
@@ -1140,6 +1300,19 @@ $enable-transitions: true !default;
         &::placeholder {
           font-size: 16px;
         }
+      }
+    }
+    &-disabled {
+      input {
+        border: 1px solid var(--gray-100-ededed, #ededed);
+        background: var(--gray-50-f-3-f-3-f-3, #f3f3f3);
+        color: var(
+          --Dark-Opacities-40,
+          var(--Dark-Opacities-40, rgba(0, 0, 0, 0.4))
+        );
+      }
+      button {
+        display: none;
       }
     }
   }
@@ -1627,7 +1800,7 @@ $enable-transitions: true !default;
     }
   }
   &-textlist {
-    strong {
+    > strong {
       color: var(--gray-800191919, var(--gray-800191919, #191919));
 
       /* MO/Heading/Xxsmall */
@@ -2142,7 +2315,7 @@ $enable-transitions: true !default;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 0px;
       margin-top: 10px;
     }
     &-backdrop {

@@ -26,12 +26,12 @@
     <div class="ne">
       <!-- header -->
       <div
-        include-html="../../inc/layout/header.html"
+        include-html="../../inc/layout/header-math.html"
         style="position: sticky; top: 0; z-index: 100"
       ></div>
       <!-- //header -->
 
-      <main id="content" data-pate-title="교재/E-BOOK">
+      <main id="content" data-page-title="교재/E-BOOK">
         <div class="ne-detail">
           <div class="ne-contents">
             <div class="ne-detail-head">
@@ -293,7 +293,7 @@
             </div>
             <script>
               document.addEventListener('DOMContentLoaded', function () {
-                const links = document.querySelectorAll('.ne-contents a');
+                const links = document.querySelectorAll('.ne-contents > a');
 
                 links.forEach((link) => {
                   link.addEventListener('click', function (e) {
@@ -334,7 +334,9 @@
             </script>
             <script>
               $(document).ready(function () {
-                const $menuLinks = $('.ne-detail-contents-link .ne-contents a');
+                const $menuLinks = $(
+                  '.ne-detail-contents-link .ne-contents > a'
+                );
                 const sections = [];
 
                 $menuLinks.each(function () {

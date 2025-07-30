@@ -16,11 +16,11 @@
 }
 
 .ne-header-logo a {
-  background: url(../../netutor/renew/pc/logo-math.svg) no-repeat 100% 50% !important;
+  width: 150px;
+  height: 20px;
+  background: url(../../netutor/renew/mo/logo-math.svg) no-repeat 100% 50% !important;
 }
-.ne-gnb-navy .ne-header-logo a {
-  background: url(../../netutor/renew/pc/logo-math-white.svg) no-repeat 100% 50% !important;
-}
+
 .ico-40-bookmarks-active {
   display: inline-block;
   min-width: 40px;
@@ -28,4 +28,7 @@
   background: url(../../netutor/renew/mo/icon/40/bookmarks-active-math.svg)
     no-repeat 50% 50%;
   font-size: 0;
+}
+.ico-28-a {
+  background: url(../../netutor/renew/mo/icon/28/a-math.svg) no-repeat 50% 50%;
 }
