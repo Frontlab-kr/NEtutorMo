@@ -33,7 +33,7 @@
       <main id="content" data-page-title="문법 예문 검색">
         <div class="ne-contents">
           <div class="ne-questionbank">
-            <div class="ne-questionbank-item">
+            <div class="ne-questionbank-item active">
               <button type="button" class="ne-questionbank-item-head">
                 <span
                   class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
@@ -355,7 +355,7 @@
                 </div>
               </div>
             </div>
-            <div class="ne-questionbank-item active">
+            <div class="ne-questionbank-item">
               <button type="button" class="ne-questionbank-item-head">
                 <span
                   class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
@@ -383,7 +383,7 @@
                     </div>
                   </div>
                   <ul>
-                    <li>
+                    <li class="active">
                       The clothes <span class="text-danger">don't fit</span> me.
                       <p>그 옷은 나에게 맞지 않는다.</p>
                     </li>
@@ -427,6 +427,32 @@
                     </li>
                   </ul>
                 </div>
+                <script>
+                  $(function () {
+                    // 개별 <li> 클릭 시 active 토글
+                    $('.ne-questionbank-list ul li').on('click', function () {
+                      $(this).toggleClass('active');
+                    });
+
+                    // 전체선택 버튼
+                    let allSelected = false;
+                    const $selectAllBtn = $(
+                      '.ne-questionbank-list-head__button button'
+                    ).eq(1);
+
+                    $selectAllBtn.on('click', function () {
+                      allSelected = !allSelected;
+
+                      if (allSelected) {
+                        $('.ne-questionbank-list ul li').addClass('active');
+                        $(this).text('전체해제');
+                      } else {
+                        $('.ne-questionbank-list ul li').removeClass('active');
+                        $(this).text('전체선택');
+                      }
+                    });
+                  });
+                </script>
                 <script>
                   $(document).ready(function () {
                     const $list = $('.ne-questionbank-list');

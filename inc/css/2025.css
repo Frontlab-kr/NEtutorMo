@@ -5470,11 +5470,11 @@ button {
   line-height: 150%; /* 19.5px */
   letter-spacing: -0.6px;
 }
+.ne-questionbank-list ul li.active {
+  font-weight: 700;
+}
 .ne-questionbank-list--analysis ul li p {
   display: block;
-}
-.ne-questionbank-list--checked ul li {
-  font-weight: 700;
 }
 .ne-questionbank-foot {
   display: flex;
@@ -9065,4 +9065,4 @@ button {
 }
 .ne-modal-alert .ne-modal-footer .ne-btn {
   max-width: 134px;
-}/*# sourceMappingURL=2025.css.map */
+}
