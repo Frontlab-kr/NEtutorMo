@@ -3463,7 +3463,7 @@ button {
   border: 0;
   opacity: 0.5;
   background: var(--Dark-Opacities-40, rgba(0, 0, 0, 0.4));
-  z-index: 10;
+  z-index: 90;
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s ease;
@@ -3608,6 +3608,10 @@ button {
   max-height: 300px;
   margin-top: 16px;
   overflow: visible;
+}
+.ne main {
+  position: relative;
+  z-index: 50;
 }
 .ne-contents {
   margin: 0 auto;
@@ -5960,7 +5964,7 @@ button {
 .ne-faq-item__answer-inner * {
   font-family: "Pretendard Variable" !important;
 }
-.ne-faq-item__answer p {
+.ne-faq-item__answer-content {
   color: var(--gray-800191919, #191919);
   /* MO/Body/Regular/Large */
   font-size: 16px;
