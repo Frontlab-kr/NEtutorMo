@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/m_style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://front.neungyule.com/css/swiper.css"
+      type="text/css"
+    />
+
+    <script src="../../inc/js/jquery.js"></script>
+    <script
+      src="https://front.neungyule.com/js/swiper.js"
+      type="text/javascript"
+    ></script>
+
+    <script src="../../inc/js/2025.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://front.neungyule.com/js/jquery-ui.min.js"
+    ></script>
+  </head>
+  <body>
+    <div class="ne ne--main">
+      <!-- header -->
+      <div
+        include-html="../../inc/layout/header.html"
+        style="position: sticky; top: 0; z-index: 100"
+      ></div>
+      <!-- //header -->
+
+      <div class="ne-mybook">
+        <button type="button" class="ne-mybook-toggle">
+          <i class="ico-mybook"></i>
+          <p>MY책장</p>
+        </button>
+      </div>
+
+      <main id="content">
+        <div class="ne-contents">
+          <div class="ne-main">
+            <div class="ne-main-keyvisual">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide" style="background: #bfd5ff">
+                    <div class="ne-main-keyvisual-inner">
+                      <div class="ne-main-keyvisual-info">
+                        <div class="ne-main-keyvisual__title">
+                          최대 한줄당 10자<br />
+                          <strong>최대 한줄당 10자</strong>
+                        </div>
+                        <div class="ne-main-keyvisual__text">
+                          NE능률의 Originality를 담은 <br />
+                          학원 지원 서비스 24자
+                        </div>
+                      </div>
+                      <div class="ne-main-keyvisual-img">
+                        <img
+                          src="../../netutor/renew/mo/main/img01.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide" style="background: #f1c560">
+                    <div class="ne-main-keyvisual-inner">
+                      <div class="ne-main-keyvisual-info">
+                        <div class="ne-main-keyvisual__title">
+                          최대 글자 한줄당 10자<br />
+                          <strong>최대 글자 한줄당 10자</strong>
+                        </div>
+                        <div class="ne-main-keyvisual__text">
+                          NE능률의 Originality를 담은 <br />
+                          학원 지원 서비스 24자
+                        </div>
+                      </div>
+                      <div class="ne-main-keyvisual-img">
+                        <img
+                          src="../../netutor/renew/mo/main/img01.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+              <script>
+                var swiperKeyvisual = new Swiper('.ne-main-keyvisual .swiper', {
+                  effect: 'fade',
+                  loop: true,
+                  pagination: {
+                    el: '.ne-main-keyvisual .swiper-pagination',
+                    clickable: true,
+                  },
+                  autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                  },
+                });
+              </script>
+            </div>
+            <div class="ne-main-service">
+              <div class="ne-main-contents">
+                <dl>
+                  <dt>진단</dt>
+                  <dd>
+                    <a href="">
+                      <i class="ico-40-neltEntry"></i>
+                      <p>NELT<br />응시권</p>
+                    </a>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>수업</dt>
+                  <dd>
+                    <a href="">
+                      <i class="ico-40-grammarBank"></i>
+                      <p>
+                        문법<br />
+                        문제 뱅크
+                      </p>
+                    </a>
+                    <a href="">
+                      <i class="ico-40-vocabWizard"></i>
+                      <p>
+                        어휘 출제<br />
+                        서비스
+                      </p>
+                    </a>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>평가</dt>
+                  <dd class="justify-content-center">
+                    <a href="">
+                      <i class="ico-40-evaluation"></i>
+                      <p>교재 성취<br />TEST 응시권</p>
+                    </a>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+            <div class="ne-main-now">
+              <div class="ne-main-contents">
+                <div class="ne-main-now-head">
+                  <div class="ne-main-now-head__title">
+                    <h2>엔이튜터 NOW</h2>
+                    <p>진행중인 세미나를 확인하세요!</p>
+                  </div>
+                  <div class="ne-main-now-head__link">
+                    <a href=""><i class="ico-40-link"></i></a>
+                  </div>
+                </div>
+                <div class="ne-main-now-contents">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="ne-main-now-item">
+                          <div class="ne-main-now-item-start">
+                            <div class="ne-main-now-item-head">
+                              <dl>
+                                <dt>
+                                  <p>세미나 모집</p>
+                                </dt>
+                                <dd>
+                                  <p>1인 원장을 위한 성공학원 운영 세미나1</p>
+                                  <div class="ne-main-now-item-head__tag">
+                                    <span>#증정이벤트</span>
+                                    <span>#학원운영</span>
+                                    <span>#오프라인</span>
+                                  </div>
+                                </dd>
+                              </dl>
+                              <div class="ne-main-now-item-head__img">
+                                <img
+                                  src="../../netutor/renew/mo/main/img02.png"
+                                />
+                              </div>
+                            </div>
+                            <div class="ne-main-now-item-foot">
+                              <div class="ne-main-now-item-foot__table">
+                                <table>
+                                  <colgroup>
+                                    <col style="width: 76px" />
+                                    <col style="width: 200px" />
+                                  </colgroup>
+                                  <tbody>
+                                    <tr>
+                                      <th>접수 기간</th>
+                                      <td>2025.03.25~2025.08.22</td>
+                                    </tr>
+                                    <tr>
+                                      <th>진행 기간</th>
+                                      <td>2025.03.25~2025.08.22</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <div class="ne-main-now-item-foot__button">
+                                <button
+                                  type="button"
+                                  class="ne-btn ne-btn-white ne-btn-outlined"
+                                >
+                                  상세보기
+                                </button>
+                                <button
+                                  type="button"
+                                  class="ne-btn ne-btn-white ne-btn-outlined"
+                                >
+                                  신청하기
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ne-main-now-item-end">
+                            <div class="ne-main-now-item-book">
+                              <div class="ne-main-now-item-book__title">
+                                <p>관련 교재/서비스</p>
+                              </div>
+                              <div class="ne-main-now-item-book__thumb">
+                                <img
+                                  src="../../netutor/renew/pc/temp/180-03.png"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="ne-main-now-item-book__text">
+                                <strong
+                                  >교재 추천 레벨테스트교재 추천 레벨테스트교재
+                                  추천 레벨테스트</strong
+                                >
+                                <p>
+                                  기본기, 내신대비, 수능대비, 방학특강... 챙길것
+                                  많은데 복잡하고 어렵다면?기본기, 내신대비,
+                                  수능대비, 방학특강... 챙길것 많은데 복잡하고
+                                  어렵다면?
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="ne-main-now-item">
+                          <div class="ne-main-now-item-start">
+                            <div class="ne-main-now-item-head">
+                              <dl>
+                                <dt>
+                                  <p>세미나 모집</p>
+                                </dt>
+                                <dd>
+                                  <p>1인 원장을 위한 성공학원 운영 세미나2</p>
+                                  <div class="ne-main-now-item-head__tag">
+                                    <span>#증정이벤트</span>
+                                    <span>#학원운영</span>
+                                    <span>#오프라인</span>
+                                  </div>
+                                </dd>
+                              </dl>
+                              <div class="ne-main-now-item-head__img">
+                                <img
+                                  src="../../netutor/renew/mo/main/img02.png"
+                                  alt=""
+                                />
+                              </div>
+                            </div>
+                            <div class="ne-main-now-item-foot">
+                              <div class="ne-main-now-item-foot__table">
+                                <table>
+                                  <colgroup>
+                                    <col style="width: 76px" />
+                                    <col style="width: 200px" />
+                                  </colgroup>
+                                  <tbody>
+                                    <tr>
+                                      <th>접수 기간</th>
+                                      <td>2025.03.25~2025.08.22</td>
+                                    </tr>
+                                    <tr>
+                                      <th>진행 기간</th>
+                                      <td>2025.03.25~2025.08.22</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <div class="ne-main-now-item-foot__button">
+                                <button
+                                  type="button"
+                                  class="ne-btn ne-btn-white ne-btn-outlined"
+                                >
+                                  상세보기
+                                </button>
+                                <button
+                                  type="button"
+                                  class="ne-btn ne-btn-white ne-btn-outlined"
+                                >
+                                  신청하기
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ne-main-now-item-end">
+                            <div class="ne-main-now-item-book">
+                              <div class="ne-main-now-item-book__title">
+                                <p>관련 교재/서비스</p>
+                              </div>
+                              <div class="ne-main-now-item-book__thumb">
+                                <img
+                                  src="../../netutor/renew/pc/temp/180-03.png"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="ne-main-now-item-book__text">
+                                <strong
+                                  >교재 추천 레벨테스트교재 추천 레벨테스트교재
+                                  추천 레벨테스트</strong
+                                >
+                                <p>
+                                  기본기, 내신대비, 수능대비, 방학특강... 챙길것
+                                  많은데 복잡하고 어렵다면?기본기, 내신대비,
+                                  수능대비, 방학특강... 챙길것 많은데 복잡하고
+                                  어렵다면?
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ne-main-now-contents__control">
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-pagination"></div>
+                      <button
+                        class="ne-btn ne-btn-icononly"
+                        id="swiperToggleBtn"
+                      >
+                        <i class="ico-20-pause"></i>
+                        <i class="ico-20-play"></i>
+                      </button>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                  </div>
+                  <script>
+                    var swiperKeyvisual = new Swiper('.ne-main-now .swiper', {
+                      effect: 'fade',
+                      loop: true,
+                      pagination: {
+                        el: '.ne-main-now .swiper-pagination',
+                        type: 'fraction',
+                      },
+                      navigation: {
+                        nextEl: '.ne-main-now .swiper-button-next',
+                        prevEl: '.ne-main-now .swiper-button-prev',
+                      },
+                      autoplay: {
+                        delay: 4000,
+                        disableOnInteraction: false,
+                      },
+                    });
+
+                    // ▶︎/⏸ 버튼 토글
+                    $('#swiperToggleBtn').on('click', function () {
+                      const $btn = $(this);
+                      if ($btn.hasClass('paused')) {
+                        swiperKeyvisual.autoplay.start();
+                        $btn.removeClass('paused');
+                      } else {
+                        swiperKeyvisual.autoplay.stop();
+                        $btn.addClass('paused');
+                      }
+                    });
+                  </script>
+                </div>
+              </div>
+            </div>
+            <div class="ne-main-news">
+              <div class="ne-main-contents">
+                <div class="ne-main-news-head">
+                  <div class="ne-main-news-head__title">
+                    <h2>엔이튜터 NEWS</h2>
+                    <p>엔이튜터가 전하는 학원/수업 정보를 확인하세요!</p>
+                  </div>
+                  <div class="ne-main-news-head__link">
+                    <a href=""><i class="ico-40-link"></i></a>
+                  </div>
+                </div>
+                <div class="ne-main-news-contents">
+                  <div class="ne-main-news-contents-col">
+                    <a
+                      href=""
+                      class="ne-main-news-contents-item ne-main-news-contents-item--01"
+                    >
+                      <dl>
+                        <dt>이벤트</dt>
+                        <dd>
+                          <p>
+                            학부모의 마음을<br />
+                            움직이는 10가지 <br />
+                            상담 법칙
+                          </p>
+                          <img
+                            src="../../netutor/renew/mo/main/news01.png"
+                            alt=""
+                          />
+                        </dd>
+                      </dl>
+                    </a>
+                  </div>
+                  <div class="ne-main-news-contents-col">
+                    <div class="ne-main-news-contents-row">
+                      <a
+                        href=""
+                        class="ne-main-news-contents-item ne-main-news-contents-item--02"
+                      >
+                        <dl>
+                          <dt>학원 운영 T . I . P</dt>
+                          <dd>
+                            <p>
+                              새로워진 엔이투터<br />
+                              기대평 이벤트
+                            </p>
+                            <img
+                              src="../../netutor/renew/mo/main/news02.png"
+                              alt=""
+                            />
+                          </dd>
+                        </dl>
+                      </a>
+                      <a
+                        href=""
+                        class="ne-main-news-contents-item ne-main-news-contents-item--03"
+                      >
+                        <dl>
+                          <dt>학원 운영 T . I . P</dt>
+                          <dd>
+                            <p>
+                              우리학원의 재밌는<br />
+                              성장 이야기
+                            </p>
+                            <img
+                              src="../../netutor/renew/mo/main/news03.png"
+                              alt=""
+                            />
+                          </dd>
+                        </dl>
+                      </a>
+                    </div>
+                    <div class="ne-main-news-contents-row">
+                      <a
+                        href=""
+                        class="ne-main-news-contents-item ne-main-news-contents-item--04"
+                      >
+                        <dl>
+                          <dt>카카오톡 채널 안내</dt>
+                          <dd>
+                            <p>플러스 친구 등록하고 소식 받아보세요!</p>
+                          </dd>
+                        </dl>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ne-main-foot">
+              <div class="ne-main-contents">
+                <div class="ne-main-notice">
+                  <h3>공지사항을 알려드려요!</h3>
+                  <div class="ne-main-notice-list">
+                    <a href="" class="ne-main-notice-list-item">
+                      <p>
+                        [중요] 일부 교과서(영어권문화, 진로영어, 심화) 부착 음원
+                        CD 오류 [중요] 일부 교과서(영어권문화, 진로영어, 심화)
+                        부착 음원 CD 오류
+                      </p>
+                      <span>2025.08.21</span>
+                    </a>
+                    <a href="" class="ne-main-notice-list-item">
+                      <p>
+                        [중요] 일부 교과서(영어권문화, 진로영어, 심화) 부착 음원
+                        CD 오류 [중요] 일부 교과서(영어권문화, 진로영어, 심화)
+                        부착 음원 CD 오류
+                      </p>
+                      <span>2025.08.21</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="ne-main-qna">
+                  <h3>문의사항이 있으신가요?</h3>
+                  <div class="ne-main-qna-list">
+                    <a href="" class="ne-main-qna-list-item">1:1 문의</a>
+                    <a href="" class="ne-main-qna-list-item">카카오톡 문의</a>
+                    <a href="" class="ne-main-qna-list-item">자주 묻는 질문</a>
+                    <a href="" class="ne-main-qna-list-item">문자상담</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <script>
+        $(window).on('scroll', function () {
+          const $el = $('.ne.ne--main');
+          if ($(window).scrollTop() > 0) {
+            $el.addClass('ne--main-scroll');
+          } else {
+            $el.removeClass('ne--main-scroll');
+          }
+        });
+      </script>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+
+    <div class="ne-banner">
+      <button type="button" class="ne-banner-dim"></button>
+      <div class="ne-banner-contents">
+        <div class="ne-banner-contents__title">
+          <strong>새로워진 엔이튜터의<br />후기를 남겨주세요!</strong>
+          <p>
+            멋진 후기를 써주신 원장님께 무료체험권을<br />
+            선물로 드립니다.
+          </p>
+        </div>
+        <div class="ne-banner-contents__image">
+          <img
+            src="../../netutor/renew/mo/main/banner01.png"
+            alt=""
+            style="width: 280px"
+          />
+        </div>
+        <div class="ne-banner-contents__button">
+          <button class="ne-btn ne-btn-text btn-close-today">
+            오늘하루 보지 않기
+          </button>
+          <button class="ne-btn ne-btn-text btn-close">
+            닫기
+            <i class="ico-16-close"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const BANNER_KEY = 'hideNeBannerUntil';
+
+      // 날짜 비교 함수
+      function isToday(dateStr) {
+        const today = new Date();
+        const target = new Date(dateStr);
+        return (
+          today.getFullYear() === target.getFullYear() &&
+          today.getMonth() === target.getMonth() &&
+          today.getDate() === target.getDate()
+        );
+      }
+
+      $(document).ready(function () {
+        const hiddenUntil = localStorage.getItem(BANNER_KEY);
+
+        // 날짜 확인 후 배너 표시
+        if (!hiddenUntil || !isToday(hiddenUntil)) {
+          $('.ne-banner').addClass('active');
+        }
+
+        // 일반 닫기
+        $('.ne-banner-contents__button .btn-close, .ne-banner-dim').on(
+          'click',
+          function () {
+            $('.ne-banner').removeClass('active');
+          }
+        );
+
+        // 오늘 하루 보지 않기
+        $('.btn-close-today').on('click', function () {
+          const now = new Date();
+          localStorage.setItem(BANNER_KEY, now.toISOString());
+          $('.ne-banner').removeClass('active');
+        });
+      });
+    </script>
+
+    <div
+      style="
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 100;
+      "
+    >
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#modal01"
+      >
+        MY 책장
+      </button>
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#modal02"
+      >
+        교재 추가하기
+      </button>
+    </div>
+    <div class="ne-modal fade" id="modal01" tabindex="-1">
+      <div class="ne-modal-dialog">
+        <div class="ne-modal-content">
+          <div class="ne-modal-header justify-content-start">
+            <div class="ne-modal-title"><strong>MY 책장</strong></div>
+            <button
+              type="button"
+              class="ne-btn ne-btn-icononly"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ico-28-close"></i>
+            </button>
+          </div>
+          <div class="ne-modal-body">
+            <div class="ne-modal-textbook">
+              <div class="ne-modal-textbook-head">
+                <div class="ne-modal-textbook-head__sort">
+                  <div class="ne-sort pt-0">
+                    <div class="ne-sort-item active">
+                      <a href="">전체 (0)</a>
+                    </div>
+                    <div class="ne-sort-item">
+                      <a href="">초등 (0)</a>
+                    </div>
+                    <div class="ne-sort-item">
+                      <a href="">중등 (0)</a>
+                    </div>
+                    <div class="ne-sort-item">
+                      <a href="">고등 (0)</a>
+                    </div>
+                    <div class="ne-sort-item">
+                      <a href="">ELT(0)</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-modal-textbook-head__text">
+                  <ul>
+                    <li>
+                      <p>
+                        원하시는 교재를 드래그해서 노출 순서를 변경할 수
+                        있습니다.
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="ne-modal-textbook-list">
+                <div class="ne-modal-textbook-list-item">
+                  <a href="javascript:void(0)">
+                    <img
+                      src="../../netutor/renew/pc/temp/textbook01.png"
+                      alt=""
+                    />
+                    <div class="ne-modal-textbook-list-item__text">
+                      <i class="ico-20-new-yellow"></i>
+                      <p>초등 Grammar Inside 1</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="ne-modal-textbook-list-item">
+                  <a href="javascript:void(0)">
+                    <img
+                      src="../../netutor/renew/pc/temp/textbook02.png"
+                      alt=""
+                    />
+                    <div class="ne-modal-textbook-list-item__text">
+                      <i class="ico-20-new-yellow"></i>
+                      <p>초등 Grammar Inside 1</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="ne-modal-textbook-list-item">
+                  <a href="javascript:void(0)">
+                    <img
+                      src="../../netutor/renew/pc/temp/textbook03.png"
+                      alt=""
+                    />
+                    <div class="ne-modal-textbook-list-item__text">
+                      <i class="ico-20-new-yellow"></i>
+                      <p>
+                        초등 Grammar Inside 1초등 Grammar Inside 1초등 Grammar
+                        Inside 1
+                      </p>
+                    </div>
+                  </a>
+                </div>
+                <div class="ne-modal-textbook-list-item">
+                  <a href="javascript:void(0)">
+                    <img
+                      src="../../netutor/renew/pc/temp/textbook04.png"
+                      alt=""
+                    />
+                    <div class="ne-modal-textbook-list-item__text">
+                      <i class="ico-20-new-yellow"></i>
+                      <p>초등 Grammar Inside 1</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <script>
+                $(document).ready(function () {
+                  $('.ne-modal-textbook-list').sortable();
+                });
+              </script>
+            </div>
+          </div>
+          <div class="ne-modal-footer">
+            <button type="button" class="ne-btn ne-btn-black">
+              순서 저장하기
+            </button>
+            <button
+              type="button"
+              class="ne-btn ne-btn-primary"
+              data-bs-dismiss="modal"
+            >
+              교재 추가하기
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ne-modal fade" id="modal02" tabindex="-1">
+      <div class="ne-modal-dialog">
+        <div class="ne-modal-content">
+          <div class="ne-modal-header justify-content-start">
+            <div class="ne-modal-title"><strong>교재 추가하기</strong></div>
+            <button
+              type="button"
+              class="ne-btn ne-btn-icononly"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ico-28-close"></i>
+            </button>
+          </div>
+          <div class="ne-modal-body">
+            <div class="ne-modal-textbook">
+              <div class="ne-modal-textbook-head">
+                <div class="ne-modal-textbook-head-form">
+                  <div class="ne-modal-textbook-head-form-item">
+                    <div class="ne-modal-textbook-head-form-item__head">
+                      <div class="w-100">
+                        <select class="ne-select ne-select-gray">
+                          <option value="">학년군</option>
+                        </select>
+                      </div>
+                      <div class="w-100">
+                        <select class="ne-select ne-select-gray">
+                          <option value="">영역</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="w-100">
+                      <select class="ne-select ne-select-gray">
+                        <option value="">시리즈</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="ne-modal-textbook-head-form-item">
+                    <div class="ne-search">
+                      <input type="text" placeholder="검색어를 입력해주세요." />
+                      <button>검색</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-modal-textbook-head__text">
+                  <ul>
+                    <li>
+                      <p>
+                        MY 책장에 최대 30개까지 교재를 등록하실 수 있습니다.
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="ne-modal-textbook-list">
+                <div class="ne-modal-textbook-list-item">
+                  <div class="ne-checkbox">
+                    <input type="checkbox" name="checkbox1" id="checkbox1-1" />
+                    <label for="checkbox1-1"></label>
+                  </div>
+                  <a href="javascript:void(0)">
+                    <img
+                      src="../../netutor/renew/pc/temp/textbook01.png"
+                      alt=""
+                    />
+                    <div class="ne-modal-textbook-list-item__text">
+                      <i class="ico-20-new-yellow"></i>
+                      <p>
+                        초등 Grammar Inside 1초등 Grammar Inside 1초등 Grammar
+                        Inside 1초등 Grammar Inside 1
+                      </p>
+                    </div>
+                  </a>
+                </div>
+                <div class="ne-modal-textbook-list-item">
+                  <div class="ne-checkbox">
+                    <input type="checkbox" name="checkbox1" id="checkbox1-2" />
+                    <label for="checkbox1-2"></label>
+                  </div>
+                  <a href="javascript:void(0)">
+                    <img
+                      src="../../netutor/renew/pc/temp/textbook02.png"
+                      alt=""
+                    />
+                    <div class="ne-modal-textbook-list-item__text">
+                      <p>초등 Grammar Inside 1</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="ne-modal-textbook-list-item">
+                  <div class="ne-checkbox">
+                    <input type="checkbox" name="checkbox1" id="checkbox1-3" />
+                    <label for="checkbox1-3"></label>
+                  </div>
+                  <a href="javascript:void(0)">
+                    <img
+                      src="../../netutor/renew/pc/temp/textbook03.png"
+                      alt=""
+                    />
+                    <div class="ne-modal-textbook-list-item__text">
+                      <i class="ico-20-new-yellow"></i>
+                      <p>초등 Grammar Inside 1</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="ne-modal-textbook-list-item">
+                  <div class="ne-checkbox">
+                    <input type="checkbox" name="checkbox1" id="checkbox1-4" />
+                    <label for="checkbox1-4"></label>
+                  </div>
+                  <a href="javascript:void(0)">
+                    <img
+                      src="../../netutor/renew/pc/temp/textbook04.png"
+                      alt=""
+                    />
+                    <div class="ne-modal-textbook-list-item__text">
+                      <i class="ico-20-new-yellow"></i>
+                      <p>초등 Grammar Inside 1</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ne-modal-footer">
+            <button
+              type="button"
+              class="ne-btn ne-btn-primary"
+              data-bs-dismiss="modal"
+            >
+              저장하기
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
