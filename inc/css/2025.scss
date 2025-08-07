@@ -203,7 +203,7 @@ button {
       }
     }
     &-search {
-      display: none;
+      //display: none;
       position: fixed;
       top: 52px;
       right: 0;
@@ -211,6 +211,9 @@ button {
       left: 0;
       padding: 20px 20px 30px 20px;
       background-color: #fff;
+      transition: all 0.2s ease;
+      opacity: 0;
+      visibility: hidden;
       .ne-search {
         input {
           background-color: var(--gray-100-ededed, #ededed);
@@ -525,7 +528,9 @@ button {
           50%;
       }
       &-search {
-        display: block;
+        //display: block;
+        opacity: 1;
+        visibility: visible;
       }
       &-dim {
         opacity: 1;
@@ -537,7 +542,7 @@ button {
     #content {
       margin-top: -52px;
     }
-    &:not(.ne--main-scroll) {
+    &:not(.ne--main-scroll):not(.ne--search) {
       .ne-header {
         background-color: transparent;
         border-color: transparent;
@@ -2734,6 +2739,49 @@ button {
             i {
               min-height: 40px;
             }
+          }
+        }
+      }
+    }
+    &-quick {
+      padding: 40px 0 50px 20px;
+      &__title {
+        margin-bottom: 30px;
+        color: var(--Gray-Black, #000);
+
+        /* MO/Display/Bold/Xxsmall */
+        font-family: var(--Font-Family-Paperlogy, Paperlogy);
+        font-size: var(--Font-size-heading-medium, 24px);
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%; /* 33.6px */
+        letter-spacing: -0.6px;
+      }
+      &__list {
+        display: flex;
+        align-items: center;
+        padding: 0 20px 0 0;
+        overflow: auto;
+        a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+          min-width: 80px;
+          height: 115px;
+          word-break: keep-all;
+          border-radius: 10px;
+          transition: all 0.2s ease;
+
+          p {
+            color: var(--Gray-Black, var(--Gray-Black, #000));
+            text-align: center;
+
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 120%; /* 16.8px */
+            letter-spacing: -0.6px;
           }
         }
       }

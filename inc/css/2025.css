@@ -393,6 +393,102 @@
   font-size: 0;
 }
 
+.ico-40-lessonMaterials {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/mo/icon/40/lessonMaterials.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
+.ico-40-lessonMaterials-math {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/mo/icon/40/lessonMaterials-math.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
+.ico-40-curriculum {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/mo/icon/40/curriculum.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
+.ico-40-curriculum-math {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/mo/icon/40/curriculum-math.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
+.ico-40-academyInfo {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/mo/icon/40/academyInfo.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
+.ico-40-academyInfo-math {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/mo/icon/40/academyInfo-math.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
+.ico-40-seminarApply {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/mo/icon/40/seminarApply.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
+.ico-40-seminarApply-math {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/mo/icon/40/seminarApply-math.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
+.ico-40-event {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/mo/icon/40/event.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
+.ico-40-event-math {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/mo/icon/40/event-math.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
+.ico-40-buildAndGrow {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/mo/icon/40/buildAndGrow.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
+.ico-40-buildAndGrow-math {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/mo/icon/40/buildAndGrow-math.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
 .ico-40-answerAndExplanation {
   display: inline-block;
   min-width: 40px;
@@ -502,6 +598,14 @@
   min-width: 40px;
   height: 40px;
   background: url(../../netutor/renew/mo/icon/40/notice.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
+.ico-40-notice-math {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/mo/icon/40/notice-math.svg) no-repeat 50% 50%;
   font-size: 0;
 }
 
@@ -3231,13 +3335,15 @@ button {
   font-size: 0;
 }
 .ne-header-search {
-  display: none;
   position: fixed;
   top: 52px;
   right: 0;
   left: 0;
   padding: 20px 20px 30px 20px;
   background-color: #fff;
+  transition: all 0.2s ease;
+  opacity: 0;
+  visibility: hidden;
 }
 .ne-header-search .ne-search input {
   background-color: var(--gray-100-ededed, #ededed);
@@ -3501,7 +3607,8 @@ button {
   background: url(../../netutor/renew/mo/icon/28/close.svg) no-repeat 50% 50%;
 }
 .ne--search .ne-header-search {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 .ne--search .ne-header-dim {
   opacity: 1;
@@ -3510,7 +3617,7 @@ button {
 .ne--main #content {
   margin-top: -52px;
 }
-.ne--main:not(.ne--main-scroll) .ne-header {
+.ne--main:not(.ne--main-scroll):not(.ne--search) .ne-header {
   background-color: transparent;
   border-color: transparent;
 }
@@ -5466,6 +5573,46 @@ button {
 }
 .ne-main-service dl dd a i {
   min-height: 40px;
+}
+.ne-main-quick {
+  padding: 40px 0 50px 20px;
+}
+.ne-main-quick__title {
+  margin-bottom: 30px;
+  color: var(--Gray-Black, #000);
+  /* MO/Display/Bold/Xxsmall */
+  font-family: var(--Font-Family-Paperlogy, Paperlogy);
+  font-size: var(--Font-size-heading-medium, 24px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 33.6px */
+  letter-spacing: -0.6px;
+}
+.ne-main-quick__list {
+  display: flex;
+  align-items: center;
+  padding: 0 20px 0 0;
+  overflow: auto;
+}
+.ne-main-quick__list a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 80px;
+  height: 115px;
+  word-break: keep-all;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+.ne-main-quick__list a p {
+  color: var(--Gray-Black, var(--Gray-Black, #000));
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 16.8px */
+  letter-spacing: -0.6px;
 }
 .ne-main-now {
   padding: 48px 20px 60px;

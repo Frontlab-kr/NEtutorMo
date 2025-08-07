@@ -25,6 +25,8 @@
       type="text/javascript"
       src="https://front.neungyule.com/js/jquery-ui.min.js"
     ></script>
+
+    <link rel="stylesheet" href="../../inc/css/service_ma.css" />
   </head>
   <body>
     <div class="ne ne--main">
@@ -106,45 +108,50 @@
                 });
               </script>
             </div>
-            <div class="ne-main-service">
+            <div class="ne-main-quick">
               <div class="ne-main-contents">
-                <dl>
-                  <dt>진단</dt>
-                  <dd>
-                    <a href="">
-                      <i class="ico-40-neltEntry"></i>
-                      <p>NELT<br />응시권</p>
-                    </a>
-                  </dd>
-                </dl>
-                <dl>
-                  <dt>수업</dt>
-                  <dd>
-                    <a href="">
-                      <i class="ico-40-grammarBank"></i>
-                      <p>
-                        문법<br />
-                        문제 뱅크
-                      </p>
-                    </a>
-                    <a href="">
-                      <i class="ico-40-vocabWizard"></i>
-                      <p>
-                        어휘 출제<br />
-                        서비스
-                      </p>
-                    </a>
-                  </dd>
-                </dl>
-                <dl>
-                  <dt>평가</dt>
-                  <dd class="justify-content-center">
-                    <a href="">
-                      <i class="ico-40-evaluation"></i>
-                      <p>교재 성취<br />TEST 응시권</p>
-                    </a>
-                  </dd>
-                </dl>
+                <div class="ne-main-quick__title">
+                  선생님들께서 많이 찾고 있어요
+                </div>
+                <div class="ne-main-quick__list">
+                  <a href="">
+                    <i class="ico-40-lessonMaterials-math"></i>
+                    <p>교재<br />수업자료</p>
+                  </a>
+                  <a href="">
+                    <i class="ico-40-curriculum-math"></i>
+                    <p>커리큘럼</p>
+                  </a>
+                  <a href="">
+                    <i class="ico-40-academyInfo-math"></i>
+                    <p>
+                      학원/수업<br />
+                      정보
+                    </p>
+                  </a>
+                  <a href="">
+                    <i class="ico-40-seminarApply-math"></i>
+                    <p>
+                      무료 세미나<br />
+                      신청
+                    </p>
+                  </a>
+                  <a href="">
+                    <i class="ico-40-event-math"></i>
+                    <p>
+                      진행중인<br />
+                      이벤트
+                    </p>
+                  </a>
+                  <a href="">
+                    <i class="ico-40-notice-math"></i>
+                    <p>새소식</p>
+                  </a>
+                  <a href="">
+                    <i class="ico-40-buildAndGrow-math"></i>
+                    <p>NE <br />Build&Grow</p>
+                  </a>
+                </div>
               </div>
             </div>
             <div class="ne-main-now">
@@ -606,6 +613,41 @@
         type="button"
         class="ne-btn ne-btn-primary ne-btn-sm"
         data-bs-toggle="modal"
+        data-bs-target="#alert01"
+      >
+        alert01
+      </button>
+
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#alert02"
+      >
+        alert02
+      </button>
+
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#alert03"
+      >
+        alert03
+      </button>
+
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#alert04"
+      >
+        alert04
+      </button>
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
         data-bs-target="#modal01"
       >
         MY 책장
@@ -619,6 +661,82 @@
         교재 추가하기
       </button>
     </div>
+
+    <div class="ne-modal fade" id="alert01" tabindex="-1">
+      <div class="ne-modal-dialog ne-modal-alert">
+        <div class="ne-modal-content">
+          <div class="ne-modal-body text-center">
+            MY 책장에 교재는 30개까지 등록하실 수<br />있습니다. 다른 교재를
+            선택 해제 후<br />추가해주세요.
+          </div>
+          <div class="ne-modal-footer">
+            <button
+              type="button"
+              class="ne-btn ne-btn-primary w-100"
+              data-bs-dismiss="modal"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ne-modal fade" id="alert02" tabindex="-1">
+      <div class="ne-modal-dialog ne-modal-alert">
+        <div class="ne-modal-content">
+          <div class="ne-modal-body text-center">선택한 교재가 없습니다.</div>
+          <div class="ne-modal-footer">
+            <button
+              type="button"
+              class="ne-btn ne-btn-primary w-100"
+              data-bs-dismiss="modal"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ne-modal fade" id="alert03" tabindex="-1">
+      <div class="ne-modal-dialog ne-modal-alert">
+        <div class="ne-modal-content">
+          <div class="ne-modal-body text-center">
+            MY 책장에 교재가 저장되었습니다.
+          </div>
+          <div class="ne-modal-footer">
+            <button
+              type="button"
+              class="ne-btn ne-btn-primary w-100"
+              data-bs-dismiss="modal"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ne-modal fade" id="alert04" tabindex="-1">
+      <div class="ne-modal-dialog ne-modal-alert">
+        <div class="ne-modal-content">
+          <div class="ne-modal-body text-center">
+            MY 책장에 교재 순서가 저장되었습니다.
+          </div>
+          <div class="ne-modal-footer">
+            <button
+              type="button"
+              class="ne-btn ne-btn-primary w-100"
+              data-bs-dismiss="modal"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="ne-modal fade" id="modal01" tabindex="-1">
       <div class="ne-modal-dialog">
         <div class="ne-modal-content">

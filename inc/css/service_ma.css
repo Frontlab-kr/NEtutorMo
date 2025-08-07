@@ -32,3 +32,23 @@
 .ico-28-a {
   background: url(../../netutor/renew/mo/icon/28/a-math.svg) no-repeat 50% 50%;
 }
+
+.ne-main-news-contents-item--01 {
+  background: var(--secondary-math-8009-ee-56-f, #9ee56f);
+}
+.ne-main-news-contents-item--02 {
+  background: #a1b8e6;
+}
+.ne-main-news-contents-item--03 {
+  background: var(--secondary-math-400-c-9-f-1-af, #c9f1af);
+}
+.ne-main-news-contents-item--04 {
+  background: var(--secondary-math-100-eafadf, #eafadf);
+}
+
+.ne-banner-contents {
+  background: var(--secondary-math-600-b-4-eb-8-f, #b4eb8f);
+}
+.ne-modal-textbook-list-item__text .ico-20-new-yellow {
+  background: url(../../netutor/renew/mo/icon/20/new-math.svg) no-repeat 50% 50%;
+}
