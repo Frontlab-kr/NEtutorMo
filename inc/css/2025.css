@@ -3156,7 +3156,6 @@ html {
   min-width: 100%;
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   letter-spacing: 0;
-  scroll-behavior: smooth;
   overflow: visible;
   color: #323232;
 }
@@ -3326,6 +3325,9 @@ button {
   font-weight: 500;
   line-height: 150%; /* 24px */
   letter-spacing: -0.6px;
+}
+.ne-header-logo {
+  display: none;
 }
 .ne-header-logo a {
   display: block;
@@ -3626,6 +3628,9 @@ button {
 }
 .ne--main .ne-header-start .ne-btn {
   display: none;
+}
+.ne--main .ne-header-start .ne-header-logo {
+  display: block;
 }
 .ne--main .ne-footer {
   margin-top: 0;
@@ -5001,8 +5006,18 @@ button {
   line-height: 150%; /* 24px */
   letter-spacing: -0.6px;
 }
+.ne-view-contents table {
+  display: block;
+  width: 100% !important;
+  overflow-x: auto;
+}
 .ne-view-contents img {
   max-width: 100%;
+}
+.ne-view-contents iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
 }
 .ne-view-contents .ne-write-textbook {
   margin-bottom: 30px;
@@ -5034,6 +5049,9 @@ button {
   font-weight: 400;
   line-height: 150%; /* 24px */
   letter-spacing: -0.6px;
+}
+.ne-view-answer__contents img {
+  max-width: 100%;
 }
 .ne-view-answer__info {
   display: flex;
@@ -6856,14 +6874,14 @@ button {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
-  aspect-ratio: 458/344;
+  aspect-ratio: 335/190;
 }
 .ne-news-list-item__thumb iframe {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
-  aspect-ratio: 458/258;
+  aspect-ratio: 335/190;
 }
 .ne-news-list-item__body {
   padding: 24px 0;

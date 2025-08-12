@@ -53,7 +53,6 @@ html {
     'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
   letter-spacing: 0;
-  scroll-behavior: smooth;
   overflow: visible;
   color: #323232;
 }
@@ -193,6 +192,7 @@ button {
       letter-spacing: -0.6px;
     }
     &-logo {
+      display: none;
       a {
         display: block;
         width: 148px;
@@ -555,6 +555,9 @@ button {
       &-start {
         .ne-btn {
           display: none;
+        }
+        .ne-header-logo {
+          display: block;
         }
       }
     }
@@ -2113,8 +2116,18 @@ button {
       font-weight: 400;
       line-height: 150%; /* 24px */
       letter-spacing: -0.6px;
+      table {
+        display: block;
+        width: 100% !important;
+        overflow-x: auto;
+      }
       img {
         max-width: 100%;
+      }
+      iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
       }
       .ne-write-textbook {
         margin-bottom: 30px;
@@ -2150,6 +2163,9 @@ button {
         font-weight: 400;
         line-height: 150%; /* 24px */
         letter-spacing: -0.6px;
+        img {
+          max-width: 100%;
+        }
       }
       &__info {
         display: flex;
@@ -4164,13 +4180,13 @@ button {
             width: 100%;
             object-fit: cover;
             border-radius: 10px;
-            aspect-ratio: 458 / 344;
+            aspect-ratio: 335 / 190;
           }
           iframe {
             width: 100%;
             object-fit: cover;
             border-radius: 10px;
-            aspect-ratio: 458 / 258;
+            aspect-ratio: 335 / 190;
           }
         }
         &__body {
