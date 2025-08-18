@@ -281,7 +281,7 @@ $(document).ready(function () {
       $parent.removeClass('has-value');
     }
   });
-  $(document).on('click', '.ne-input button', function () {
+  $(document).on('click', '.ne-input button:contains("삭제")', function () {
     const $parent = $(this).closest('.ne-input');
     $(this).siblings('input').val('');
     $parent.removeClass('has-value');
@@ -403,26 +403,32 @@ $(document).ready(function () {
   });
 
   //modal
-  //modal
-  // 열기 버튼 클릭 시
-  document.querySelectorAll('[data-bs-target]').forEach((button) => {
-    button.addEventListener('click', function () {
-      const targetId = this.getAttribute('data-bs-target');
-      const modal = document.querySelector(targetId);
-      if (modal) {
-        modal.classList.add('show');
-        document.body.classList.add('modal-open'); // ✅ html에 클래스 추가
+  // ====== 열기: 이벤트 위임 (동적 버튼 대응) ======
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest('[data-bs-target]'); // 동적으로 생긴 버튼 포함
+    if (!btn) return;
 
-        // 백드롭 추가
-        const backdrop = document.createElement('div');
-        backdrop.className = 'ne-modal-backdrop fade';
-        document.body.appendChild(backdrop);
-        requestAnimationFrame(() => backdrop.classList.add('show'));
-      }
-    });
+    const targetId = btn.getAttribute('data-bs-target');
+    if (!targetId) return;
+
+    const modal = document.querySelector(targetId);
+    if (!modal) return;
+
+    // 모달 표시
+    modal.classList.add('show');
+    document.body.classList.add('modal-open');
+
+    // 기존 백드롭 제거(중복 생성 방지)
+    document.querySelectorAll('.ne-modal-backdrop').forEach((b) => b.remove());
+
+    // 백드롭 생성
+    const backdrop = document.createElement('div');
+    backdrop.className = 'ne-modal-backdrop fade';
+    document.body.appendChild(backdrop);
+    requestAnimationFrame(() => backdrop.classList.add('show'));
   });
 
-  // 닫기 버튼 클릭, ESC, 백드롭 클릭 등 닫을 때마다
+  // ====== 닫기 공통 함수 ======
   function closeModal(modal) {
     if (modal) {
       modal.classList.remove('show');
@@ -434,10 +440,10 @@ $(document).ready(function () {
       setTimeout(() => backdrop.remove(), 300);
     }
 
-    document.body.classList.remove('modal-open'); // ✅ html 클래스 제거
+    document.body.classList.remove('modal-open');
   }
 
-  // ESC 키
+  // ====== ESC로 닫기 ======
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
       document.querySelectorAll('.ne-modal.show').forEach((modal) => {
@@ -446,7 +452,7 @@ $(document).ready(function () {
     }
   });
 
-  // 닫기 버튼
+  // ====== [data-bs-dismiss="modal"]로 닫기 ======
   document.addEventListener('click', function (e) {
     const dismissBtn = e.target.closest('[data-bs-dismiss="modal"]');
     if (dismissBtn) {
@@ -455,14 +461,39 @@ $(document).ready(function () {
     }
   });
 
-  // dialog 외부 클릭 시
+  // ====== 바깥 클릭(백드롭/컨테이너)으로 닫기 + 드래그 보호 ======
+  let isDraggingFromModal = false;
+
+  // 드래그 시작 지점 체크
+  document.addEventListener('mousedown', function (e) {
+    const modalContent = e.target.closest('.ne-modal-content');
+    isDraggingFromModal = !!modalContent;
+  });
+
+  // 바깥 클릭 처리
   document.addEventListener('click', function (e) {
+    if (e.target.closest('.ne-tooltip')) return;
+
+    // 1) 백드롭 클릭 시 닫기
+    if (
+      e.target.classList &&
+      e.target.classList.contains('ne-modal-backdrop')
+    ) {
+      const opened = document.querySelector('.ne-modal.show');
+      if (opened) closeModal(opened);
+      isDraggingFromModal = false;
+      return;
+    }
+
+    // 2) .ne-modal 영역 안이지만 .ne-modal-content 바깥을 클릭한 경우 닫기
     const modal = e.target.closest('.ne-modal');
     const content = e.target.closest('.ne-modal-content');
 
-    if (modal && !content) {
+    if (modal && !content && !isDraggingFromModal) {
       closeModal(modal);
     }
+
+    isDraggingFromModal = false;
   });
 
   //

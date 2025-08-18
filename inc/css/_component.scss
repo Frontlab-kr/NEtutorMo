@@ -2240,6 +2240,26 @@ $enable-transitions: true !default;
       opacity: 1;
       visibility: visible;
     }
+        &-popup {
+      position: relative;
+      left: auto;
+      top: auto;
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      .ne-modal-dialog {
+        height: 100%;
+      }
+      .ne-modal-dialog-lg {
+        width: 100%;
+      }
+      .ne-modal-content {
+        max-height: 100%;
+      }
+      .ne-modal-body {
+        height: calc(100vh - 52px);
+      }
+    }
     &-dialog {
       position: relative;
       width: 100%;

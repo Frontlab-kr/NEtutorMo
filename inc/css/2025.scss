@@ -2,6 +2,7 @@
 @import 'nice-select';
 @import 'component';
 @import 'bootstrap-utilities.css';
+@import 'gate';
 
 //Pretendard
 @import url(https://front.neungyule.com/css/pretendardvariable.css);
@@ -123,7 +124,7 @@ button {
     }
   }
   strong {
-    font-weight: 800;
+    //font-weight: 800;
   }
   &-guide {
     padding: 100px 0;
@@ -197,7 +198,7 @@ button {
         display: block;
         width: 148px;
         height: 20px;
-        background: url(../../netutor/renew/mo/logo.svg) no-repeat 50% 50%;
+        background: url(../../netutor/renew/mo/logo-en.svg) no-repeat 50% 50%;
 
         font-size: 0;
       }
@@ -513,9 +514,15 @@ button {
     main {
       display: none;
     }
+    .ne-mybook {
+      display: none;
+    }
   }
   &--fullmenu & {
     &-header {
+      &-logo {
+        display: block;
+      }
       &-menu {
         display: flex;
       }
@@ -550,6 +557,40 @@ button {
     }
   }
   &--main & {
+    &-header {
+      transition: all 0.2s ease;
+      &-start {
+        .ne-btn {
+          display: none;
+        }
+        .ne-header-logo {
+          display: block;
+        }
+      }
+    }
+    &-footer {
+      margin-top: 0;
+    }
+  }
+  &--gate {
+    // #content {
+    //   margin-top: -52px;
+    // }
+    // &:not(.ne--main-scroll):not(.ne--search) {
+    //   .ne-header {
+    //     background-color: transparent;
+    //     border-color: transparent;
+    //   }
+    // }
+    .ne-header-logo a {
+      display: block;
+      width: 96px;
+      height: 20px;
+      background: url(../../netutor/renew/mo/logo.svg) no-repeat 50% 50%;
+      font-size: 0;
+    }
+  }
+  &--gate & {
     &-header {
       transition: all 0.2s ease;
       &-start {
@@ -2760,7 +2801,7 @@ button {
       }
     }
     &-quick {
-      padding: 40px 0 50px 20px;
+      padding: 40px 0 40px 20px;
       &__title {
         margin-bottom: 30px;
         color: var(--Gray-Black, #000);
@@ -2779,15 +2820,24 @@ button {
         padding: 0 20px 0 0;
         overflow: auto;
         a {
+          // display: flex;
+          // flex-direction: column;
+          // align-items: center;
+          // gap: 8px;
+          // min-width: 80px;
+          // height: 115px;
+          // word-break: keep-all;
+          // border-radius: 10px;
+          // transition: all 0.2s ease;
+
           display: flex;
           flex-direction: column;
           align-items: center;
           gap: 8px;
-          min-width: 80px;
+          min-width: 90px;
+          width: 90px;
           height: 115px;
-          word-break: keep-all;
-          border-radius: 10px;
-          transition: all 0.2s ease;
+          padding: 16px 5px 0;
 
           p {
             color: var(--Gray-Black, var(--Gray-Black, #000));
@@ -2951,6 +3001,9 @@ button {
                 font-weight: 800;
                 line-height: 150%; /* 30px */
                 letter-spacing: -0.6px;
+                a {
+                  color: var(--Gray-White, #fff);
+                }
               }
             }
           }
@@ -3170,16 +3223,39 @@ button {
           display: flex;
           gap: 10px;
         }
-
+        .swiper {
+          width: 100%;
+          min-width: 0; /* 안전장치 */
+          overflow: hidden;
+          height: 100%;
+          max-width: 100%;
+          &-slide {
+            position: static;
+            //width: auto !important;
+            display: flex;
+            width: 100%;
+            min-width: 0;
+            a {
+              min-width: 0;
+              width: 100%;
+              height: 100%;
+              min-width: 0;
+            }
+          }
+        }
         &-item {
           position: relative;
           display: block;
           width: 100%;
           height: 100%;
           border-radius: 12px;
+          transition: all 0.2s ease;
+          overflow: hidden;
           dl {
+            position: relative;
             width: 100%;
             height: 100%;
+            transition: all 0.2s ease;
             dt {
               display: inline-flex;
               margin-bottom: 10px;
@@ -3219,9 +3295,8 @@ button {
           }
           &--01 {
             height: 380px;
-            padding: 30px 20px;
-            background: #f1c560;
             dl {
+              padding: 30px 20px;
               overflow: hidden;
               dt {
                 display: inline-flex;
@@ -3261,9 +3336,9 @@ button {
           }
           &--02 {
             height: 220px;
-            padding: 20px 16px;
-            background: #a1b8e6;
+
             dl {
+              padding: 20px 16px;
               dd {
                 img {
                   width: 155px;
@@ -3273,9 +3348,9 @@ button {
           }
           &--03 {
             height: 220px;
-            padding: 20px 16px;
-            background: #fff678;
+
             dl {
+              padding: 20px 16px;
               dd {
                 img {
                   width: 155px;
@@ -3284,8 +3359,9 @@ button {
             }
           }
           &--04 {
-            padding: 20px 16px;
-            background: #fffbc7;
+            dl {
+              padding: 20px 16px;
+            }
           }
         }
       }
@@ -3311,6 +3387,11 @@ button {
         font-weight: 700;
         line-height: 140%; /* 33.6px */
         letter-spacing: -0.6px;
+      }
+      .swiper {
+        &-slide {
+          background: var(--gray-50-f-3-f-3-f-3, #f3f3f3);
+        }
       }
       &-list {
         display: flex;
