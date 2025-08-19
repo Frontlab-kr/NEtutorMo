@@ -510,7 +510,7 @@
     //height: 100vh;
     &__img {
       flex: 0 0 auto;
-      width: min(52vw, 320px);
+      width: 100%;
       max-width: 320px;
       aspect-ratio: 1 / 1; /* 정원 비율 */
       border-radius: 50%;
@@ -610,7 +610,8 @@
 
     &__img {
       flex: 0 0 auto;
-      width: min(52vw, 320px);
+      //width: min(52vw, 320px);
+      width: 100%;
       max-width: 320px;
       aspect-ratio: 1 / 1; /* 정원 비율 */
       border-radius: 50%;

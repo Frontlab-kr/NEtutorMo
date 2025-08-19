@@ -3656,7 +3656,7 @@
 }
 .ne-gate-menu__img {
   flex: 0 0 auto;
-  width: min(52vw, 320px);
+  width: 100%;
   max-width: 320px;
   aspect-ratio: 1/1; /* 정원 비율 */
   border-radius: 50%;
@@ -3741,7 +3741,7 @@
 }
 .ne-gate-data__img {
   flex: 0 0 auto;
-  width: min(52vw, 320px);
+  width: 100%;
   max-width: 320px;
   aspect-ratio: 1/1; /* 정원 비율 */
   border-radius: 50%;
@@ -8156,6 +8156,13 @@ button {
   word-break: break-all;
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+.ne-faq-item__answer-content .ne-view-head__file {
+  margin-top: 30px;
+}
+.ne-faq-item__answer-content .ne-view-head__file ul li {
+  padding-left: 0;
+  padding-right: 0;
 }
 .ne-faq-item.active .ne-faq-item__question:after {
   transform: translateY(-50%) rotate(180deg);

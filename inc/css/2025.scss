@@ -4398,6 +4398,16 @@ button {
           word-break: break-all;
           word-wrap: break-word;
           overflow-wrap: break-word;
+
+          .ne-view-head__file {
+            margin-top: 30px;
+            ul {
+              li {
+                padding-left: 0;
+                padding-right: 0;
+              }
+            }
+          }
         }
       }
       &.active & {
